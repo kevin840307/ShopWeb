@@ -1,0 +1,48 @@
+﻿.no-border {
+    border:none;
+}
+
+.border-style1 {
+    border-color:#CCCCCC;
+    border-width:1px;
+}
+
+.header-style1 {
+    height:30px;
+    border-style:groove;
+    background:#000000;
+    font:bold;
+}
+
+.select-style1 {
+    background:#ffffff;
+    font:bold;
+    color:black;
+}
+
+.gridpage-style1 {
+    background:#ffffff;
+    border-color:#9900FF;
+    border-style:ridge;
+}
+
+.foot-style1 {
+    background:#83bdff;
+    color:black;
+}
+
+.fix {
+    position:absolute;
+}
+
+.header1 {
+    position:fixed;
+    top:130px;
+    z-index:100;
+}
+
+.header2 {
+    position:fixed;
+     top:170px;
+    z-index:100;
+}

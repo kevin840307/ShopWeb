@@ -1,0 +1,229 @@
+﻿/*------------------------------------------list表的樣式-----------------------------------*/
+.list-style2 > .list-table {
+    float: left;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    /*border: solid 1px #dbdbdb;*/
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-y: auto;
+}
+
+    .list-style2 > .list-table > thead {
+        width: 100%;
+    }
+
+    .list-style2 > .list-table a {
+        color: #2e82f5;
+        padding: 8px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .list-style2 > .list-table > tbody > tr:hover {
+        background: #efefef;
+    }
+
+    .list-style2 > .list-table > thead > tr > td {
+        border-bottom: solid 1px #dbdbdb;
+    }
+
+    .list-style2 > .list-table tr > td {
+        font-family: 'Microsoft JhengHei';
+        padding: 5px;
+        /*border: solid 1px #dbdbdb;*/
+        text-align: center;
+        transition: all 0.3s;
+    }
+
+    /*------------------------------------------td類型-----------------------------------*/
+
+    .list-style2 > .list-table .time {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .list-style2 > .list-table .long-time {
+        width: 230px;
+        min-width: 230px;
+    }
+
+    .list-style2 > .list-table .general {
+        min-width: 120px;
+    }
+
+    .list-style2 > .list-table .checkboxs {
+        min-width: 20px;
+    }
+
+
+/*------------------------------------------page-----------------------------------*/
+
+.list-style2 > .list-page-div {
+    position: relative;
+    min-width: 500px;
+}
+
+    .list-style2 > .list-page-div ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+        float: left;
+    }
+
+    .list-style2 > .list-page-div li {
+        display: inline;
+    }
+
+    .list-style2 > .list-page-div a {
+        color: #2e82f5;
+        border: solid 1px #dbdbdb;
+        padding: 8px;
+        text-decoration: none;
+        float: left;
+        position: relative;
+        line-height: 1.42;
+        cursor: pointer;
+    }
+
+        .list-style2 > .list-page-div a.select {
+            color: #ffffff;
+            background: #2e82f5;
+        }
+
+            .list-style2 > .list-page-div a.select:hover {
+                background: #3f8cf5;
+            }
+
+        .list-style2 > .list-page-div a:hover {
+            background: #efefef;
+        }
+
+
+/*-----------------------------page data message----------------------------------------*/
+.list-style2 > .list-data-div {
+    position: relative;
+    font-family: 'Microsoft JhengHei UI',sans-serif;
+    float: left;
+    width: 100%;
+    text-align: left;
+    bottom: 5px;
+}
+
+    .list-style2 > .list-data-div .drop-style1 {
+        padding: 5px;
+        border-radius: 5px;
+        border: solid 1px #c1c1c1;
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+    }
+
+        .list-style2 > .list-data-div .drop-style1:focus {
+            outline: none;
+            border-color: #36b2fe;
+            box-shadow: 0 0 10px #36b2fe;
+        }
+
+/*---------------------------------------動作--------------------------------------*/
+.list-style2 > .list-table ul {
+    width: 105px;
+    float: right;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    background: #ffffff;
+    border: solid 1px #dbdbdb;
+    z-index: 55;
+    padding: 0;
+    display: none;
+}
+
+.list-style2 > .list-table .action {
+    position: relative;
+    min-width: 135px;
+}
+
+.list-style2 > .list-table li a {
+    padding: 5px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    font-family: 'Microsoft JhengHei UI',sans-serif;
+    font-size: 17px;
+    color: #585858;
+}
+
+    .list-style2 > .list-table li a:hover {
+        background-color: #e5e5e5;
+    }
+
+.list-style2 .icon-edit {
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+    content: url(../Image/edit-in.png);
+}
+
+.list-style2 .icon-delete {
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+    content: url(../Image/delete-in.png);
+}
+
+.list-style2 > .list-table input[type='image']:focus {
+    outline: none;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 #ffffff;
+}
+
+/*-------------------------------------編輯樣式-----------------------------------*/
+
+.list-style2 > .list-table > tbody .input-data {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #c1c1c1;
+    width: calc(100% - 20px);
+}
+
+    .list-style2 > .list-table > tbody .input-data:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+.list-style2 > .list-table > tbody .input-data-required {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #fe6666;
+    width: calc(100% - 20px);
+}
+
+    .list-style2 > .list-table > tbody .input-data-required:focus {
+        outline: none;
+        border-color: #fe6666;
+        box-shadow: 0 0 10px #fe6666;
+    }
+
+     .list-style2 > .list-table > tbody .input-checkbox {
+        width: 30px;
+        height: 30px;
+    }
+
+.list-style2 > .list-table > tbody .drop-style1 {
+    padding: 8px;
+    border-radius: 5px;
+    border: solid 1px #c1c1c1;
+    font-family: "Microsoft JhengHei";
+    width: calc(100% - 20px);
+}
+
+    .list-style2 > .list-table > tbody .drop-style1:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+@media screen and (max-width: 720px) {
+}

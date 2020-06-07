@@ -1,0 +1,18 @@
+﻿.button-size1 {
+    font-family: "Microsoft JhengHei";
+    border-radius: 3px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.button-size2 {
+    font-family: "Microsoft JhengHei";
+    border-radius: 3px;
+    text-align: center;
+    border-bottom: none;
+   border:none;
+    font-size: 18px;
+    width: 100px;
+}

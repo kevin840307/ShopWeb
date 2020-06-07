@@ -1,0 +1,70 @@
+﻿.client-login-div {
+    width: 100%;
+    margin-top: 30px;
+    float: left;
+}
+
+    .client-login-div .client-left-div, .client-login-div .client-center-div {
+        border: solid 1px;
+        width: 35%;
+        float: left;
+        margin-left: 10px;
+        border: solid 1px #dddddd;
+        border-radius: 8px;
+        background: #efefef;
+    }
+
+    .client-login-div .client-right-div {
+        border: solid 1px;
+        width: 26.5%;
+        height: 100px;
+        float: left;
+        margin-left: 10px;
+    }
+
+
+    .client-login-div .client-center-div input {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 30px;
+        border-radius: 7px;
+        border: solid 1px #808080;
+    }
+
+        .client-login-div .client-center-div input:focus {
+            outline: none;
+            border-color: #4aadf8;
+            box-shadow: 0 0 10px #4aadf8;
+        }
+
+    .client-login-div .client-center-div button {
+        margin-top: 10px;
+        height: 40px;
+        width: 100%;
+        border-radius: 5px;
+        border-color: #a9a9a9;
+        border: ridge 1px;
+        font-size: 18px;
+        font-family: Microsoft JhengHei;
+        background: #3da1ed;
+        color: #fff;
+    }
+
+    .client-login-div .client-center-div > div {
+        width: 90%;
+        margin:20px;
+        font-family: Microsoft JhengHei;
+    }
+
+
+    .client-login-div .client-center-div button:hover {
+        background: #2b8bd3;
+        cursor:pointer;
+    }
+
+    .client-login-div .client-center-div button:focus {
+        outline: none;
+        border-color: #4aadf8;
+        box-shadow: 0 0 10px #4aadf8;
+    }

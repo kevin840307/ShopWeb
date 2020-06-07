@@ -1,0 +1,1410 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:8312/MNDT1010.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>進銷存網站</title>
+    <link href="./進銷存網站_files/bakdround.css" rel="stylesheet">
+    <link href="./進銷存網站_files/size.css" rel="stylesheet">
+    <link href="./進銷存網站_files/full_bakdround.css" rel="stylesheet">
+    <link href="./進銷存網站_files/table.css" rel="stylesheet">
+    <link href="./進銷存網站_files/gridview.css" rel="stylesheet">
+    <script src="./進銷存網站_files/jquery-1.8.0.js.下載" type="text/javascript"></script>
+    <link href="./進銷存網站_files/button.css" rel="stylesheet">
+    <link href="./進銷存網站_files/textbox.css" rel="stylesheet">
+    <link href="./進銷存網站_files/dropdownlist.css" rel="stylesheet">
+    <link href="./進銷存網站_files/messagebox.css" rel="stylesheet">
+    <script src="./進銷存網站_files/masterJS.js.下載"></script>
+    <link href="./進銷存網站_files/dropdownlist.css" rel="stylesheet">
+    <script src="./進銷存網站_files/jquery-1.8.3.min.js.下載"></script>
+    <script type="text/javascript">set_scroll();</script>
+    <script type="text/javascript">        menu_show();</script>
+    <script type="text/javascript">        set_scroll();</script>
+    <script type="text/javascript">        menu_show();</script>
+</head>
+<body class="green-style1">
+    <form method="post" action="http://localhost:8312/MNDT1010.aspx" id="form1" class="max-width-height" enctype="multipart/form-data">
+        <div class="aspNetHidden">
+
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['form1'];
+            if (!theForm) {
+                theForm = document.form1;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+            //]]>
+        </script>
+
+        <script src="./進銷存網站_files/WebResource.axd" type="text/javascript"></script>
+
+        <script src="./進銷存網站_files/ScriptResource.axd" type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax 用戶端架構無法載入。');
+            //]]>
+        </script>
+        <script src="./進銷存網站_files/ScriptResource(1).axd" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['tctl00$master_menu$ctl00','master_menu_ctl00','tctl00$ContentPlaceHolder1$ctl03','ContentPlaceHolder1_ctl03','tctl00$ContentPlaceHolder1$ctl06','ContentPlaceHolder1_ctl06'], [], [], 90, 'ctl00');
+            //]]>
+        </script>
+
+        <div class="max-width-height">
+
+            <table class="table-size2">
+                <tbody>
+                    <tr style="position: fixed; left: 0px;">
+                        <td>
+                            <div class="table-size4 top-left">
+
+                                <link href="./進銷存網站_files/menu.css" rel="stylesheet">
+                                <link href="./進銷存網站_files/size.css" rel="stylesheet">
+                                <script>
+                                    //function hide_show_menu() {
+                                    //    var sCheck = $("#a_show_hide").text();
+                                    //    if (sCheck == '顯示') {
+                                    //        $(".menu").show(1000);
+                                    //        $("#a_show_hide").text('隱藏');
+                                    //    }
+                                    //    else if (sCheck == '隱藏') {
+                                    //        $(".menu").hide(1000);
+                                    //        $("#a_show_hide").text('顯示');
+                                    //    }
+                                    //}
+
+                                    function menu_hide() {
+                                        $(".menu").hide(1000);
+                                    }
+
+                                    function menu_show() {
+                                        $(".menu").show(1000);
+                                    }
+
+                                    $(function () {
+
+                                        //var sSelect = "";
+                                        //var sNowHref = location.href.toString().substring(location.href.indexOf("MNDT"), location.href.indexOf("MNDT") + 8);
+                                        //if (location.href.indexOf("MNDT10") > 0) {
+                                        //    sSelect = ".MNDT0001";
+                                        //} else if (location.href.indexOf("MNDT20") > 0) {
+                                        //    sSelect = ".MNDT0002";
+                                        //}
+                                        //if (sSelect != "") {
+                                        //    $(sSelect + " > a").find('i').addClass('down')   //小箭头向下样式
+                                        //        .parent().next().slideDown('fast');  //下一个元素显示
+                                        //    $("." + sNowHref + "").addClass('select_style1');
+                                        //    $("." + sNowHref + "").find('a').addClass('select_style1');
+                                        //}
+
+                                        $(".level1 > a").click(function () {
+                                            if ($(this).hasClass('current')) {
+                                                $(this).find('i').removeClass('down').parent().next().slideUp('slow');
+                                                $(this).removeClass('current');
+                                            } else {
+                                                $(this).addClass('current')   //给当前元素添加"current"样式
+                                                .find('i').addClass('down')   //小箭头向下样式
+                                                .parent().next().slideDown('slow')  //下一个元素显示
+                                                .parent().siblings().removeClass('current').children('a').removeClass('current')//父元素的兄弟元素的子元素去除"current"样式
+                                                .find('i').removeClass('down').parent().next().slideUp('slow');//隐藏
+                                            }
+
+                                            return false; //阻止默认时间
+                                        });
+                                    })
+                                </script>
+                                <div class="treebox">
+                                    <ul class="menu" style="">  <li class="level1 currentMNDT0001">  <a href="http://localhost:8312/MNDT1010.aspx#none" class="current"><em class="ico ico1"></em>基本作業維護<i class="down"></i></a>  <ul class="level2 ">  <li class="select_style1"><a class="level2-lu-a select_style1" href="http://localhost:8312/MNDT1010.aspx">使用者作業維護</a></li>  <li class=""><a class="level2-lu-a " href="http://localhost:8312/MNDT1020.aspx">使用者群組作業維護</a></li>  <li class=""><a class="level2-lu-a " href="http://localhost:8312/MNDT1030.aspx">作業群組作業維護</a></li>  </ul>  </li>  <li class="level1 MNDT0002">  <a href="http://localhost:8312/MNDT1010.aspx#none" class=""><em class="ico ico1"></em>資料作業維護<i class="up"></i></a>  <ul class="level2 hide-obj">  <li class=""><a class="level2-lu-a " href="http://localhost:8312/MNDT2010.aspx">客戶/廠商維護作業</a></li>  </ul>  </li>  <li class="logout">  <a href="http://localhost:8312/Login.aspx"><em class="sico ico5"></em>登出</a>  </li>  </ul>
+
+                                    <div class="hide">
+                                        <div id="master_menu_ctl00">
+                                            <a id="master_menu_link_show_hide" href="javascript:__doPostBack(&#39;ctl00$master_menu$link_show_hide&#39;,&#39;&#39;)">隱藏</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 100%;" class="white-style1">
+                        <td>
+                            <div class="table-size3">
+                                <div id="message" style="display: none; position: fixed; background: #ff84e4; width: 1024px; top: 0;">
+                                    <span id="lab_message"></span>
+                                </div>
+                                <div class="center">
+                                    <span id="lab_title" class="font-style1">使用者資料維護<mndt1010></mndt1010></span>
+                                </div>
+
+                                <script type="text/javascript">
+                                    function save_bottom() {
+                                        setTimeout(save_move_bottom, 100);
+                                    }
+
+                                    function save_move_bottom() {
+                                        $('.div-scroll').animate({ scrollTop: 2000 }, 'slow');
+                                    }
+
+                                    function file() {
+                                        document.getElementById('title_button_fu_file_upload').click();
+                                    }
+
+                                    function file_data() {
+                                        document.getElementById('title_button_text_file_data').value = document.getElementById('title_button_fu_file_upload').value;
+                                    }
+
+                                    function call_insert() {
+                                        if ($("#ContentPlaceHolder1_grid_data_m_ibtn_insert").length > 0) {
+                                            $("#ContentPlaceHolder1_grid_data_m_ibtn_insert").click();
+                                            //var href = $("#ContentPlaceHolder1_grid_data_m_linkbtn_insert").attr('href');
+                                            //if (href.indexOf('ctl02$linkbtn_insert') >= 0) {
+                                            //    javascript: __doPostBack('ctl00$ContentPlaceHolder1$grid_data_m$ctl02$linkbtn_insert', '');
+                                            //} else {
+                                            //    javascript: __doPostBack('ctl00$ContentPlaceHolder1$grid_data_m$ctl00$linkbtn_insert', '')
+                                            //}
+
+                                        }
+                                        else if ($("#ContentPlaceHolder1_grid_data_d_ibtn_insert").length > 0) {
+                                            $("#ContentPlaceHolder1_grid_data_d_ibtn_insert").click();
+                                            //var href = $("#ContentPlaceHolder1_grid_data_d_linkbtn_insert").attr('href');
+                                            //if (href.indexOf('ctl02$linkbtn_insert') >= 0) {
+                                            //    javascript: __doPostBack('ctl00$ContentPlaceHolder1$grid_data_d$ctl02$linkbtn_insert', '');
+                                            //} else {
+                                            //    javascript: __doPostBack('ctl00$ContentPlaceHolder1$grid_data_d$ctl00$linkbtn_insert', '');
+                                            //}
+                                        }
+
+                                        save_bottom();
+                                    }
+                                </script>
+                                <table class="blue-style2 table-size1">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4">
+                                                <input type="submit" name="ctl00$title_button$btn_insert" value="F2 新增" onclick="call_insert(); return false;" id="title_button_btn_insert" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input type="submit" name="ctl00$title_button$btn_print" value="F3 列印" id="title_button_btn_print" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input type="submit" name="ctl00$title_button$btn_export" value="F4 匯出" id="title_button_btn_export" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input type="submit" name="ctl00$title_button$btn_cancel" value="F7 取消" onclick="return false;" id="title_button_btn_cancel" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input type="file" name="ctl00$title_button$fu_file_upload" id="title_button_fu_file_upload" onchange="file_data()" style="width:0%;">
+                                                <input type="submit" name="ctl00$title_button$btn_import" value="匯入" id="title_button_btn_import" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input type="submit" name="ctl00$title_button$btn_file" value="選擇檔案" onclick="file(); return false;" id="title_button_btn_file" class="blue-style6 button-size2" style="border-style:None;">
+                                                <input name="ctl00$title_button$text_file_data" type="text" value="檔案路徑" id="title_button_text_file_data" disabled="disabled" class="aspNetDisabled blue-style1" style="border-style:None;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <script type="text/javascript">
+
+                                    //$(document).ready(function () {
+
+                                    //});
+
+                                    $(function () {
+
+                                    });
+                                </script>
+                                <div>
+
+                                    <table class="blue-style2 table-size1">
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    &nbsp;查詢<br>
+                                                    條件區
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="right">
+                                                    <span class="font-style1">使用者帳號：</span>
+                                                </td>
+                                                <td class="left">
+                                                    <input name="ctl00$ContentPlaceHolder1$text_account_id" type="text" id="ContentPlaceHolder1_text_account_id" class="font-style1">
+                                                </td>
+
+                                                <td class="right">
+                                                    <span class="font-style1">使用者名稱：</span>
+                                                </td>
+                                                <td class="left">
+                                                    <input name="ctl00$ContentPlaceHolder1$text_account_name" type="text" id="ContentPlaceHolder1_text_account_name" class="font-style1">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class="center">
+                                                    <div id="ContentPlaceHolder1_ctl03">
+                                                        <input type="submit" name="ctl00$ContentPlaceHolder1$btn_search" value="查詢" id="ContentPlaceHolder1_btn_search" class="blue-style6 button-size2" style="border-style:None;">
+                                                        <input type="submit" name="ctl00$ContentPlaceHolder1$ctl05" value="清除" class="blue-style6 button-size2" style="border-style:None;">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                  <div id="ContentPlaceHolder1_ctl06">
+                                        <div>
+                                            <table class="white-style2 no-border border-style1 font-style2" cellspacing="0" cellpadding="4" rules="rows" border="1" id="ContentPlaceHolder1_grid_data_m" style="color:Black;width:1005px;border-collapse:collapse;">
+                                                <tbody>
+                                                    <tr class="no-border header-style1 font-style1" style="color:White;">
+                                                        <th scope="col" style="width:10%;">
+                                                            <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl02$ibtn_insert" id="ContentPlaceHolder1_grid_data_m_ibtn_insert" class="margin-top-6" src="./進銷存網站_files/header_add.png" onclick="save_bottom();">
+                                                        </th>
+                                                        <th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$account_id&#39;)" style="color:White;">帳號</a></th>
+                                                        <th scope="col" style="width:10%;">密碼</th>
+                                                        <th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$account_name&#39;)" style="color:White;">名稱</a></th>
+                                                        <th scope="col" style="width:10%;">地址</th>
+                                                        <th scope="col" style="width:10%;">手機</th>
+                                                        <th scope="col" style="width:10%;">建立人員</th>
+                                                        <th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$create_datetime&#39;)" style="color:White;">建立時間</a></th>
+                                                        <th scope="col" style="width:10%;">修改人員</th>
+                                                        <th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$modify_datetime&#39;)" style="color:White;">修改時間</a></th>
+                                                    </tr>
+                                                    </tbody>
+                                                        </table>
+                                            </div>
+                                        <div>
+                                            <div id="ContentPlaceHolder1_panel_scroll_m" class="div-scroll div-scroll-size1" style="height: 633px; overflow-y: scroll;">
+
+                                                <table class="white-style2 no-border border-style1 font-style2" cellspacing="0" cellpadding="4" rules="rows" border="1" id="ContentPlaceHolder1_grid_data_m" style="color:Black;width:1005px;border-collapse:collapse;">
+                                                    <tbody>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$0&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl03$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_0" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl03$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_0" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_0">123132</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_0">23123132</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_0">12321</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_0">2313</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_0">123132</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_0">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_0">2017/04/10                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_0">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_0">2017/04/10                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$1&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl04$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_1" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl04$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_1" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_1">1s56a</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_1">0000111</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_1">魂欸56</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_1"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_1"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_1">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_1">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_1">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_1">2017/04/10                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$2&#39;); auto_move();" style="height: 40px; cursor: pointer; background-color: rgb(255, 255, 255);">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl05$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_2" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl05$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_2" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_2">1sadasd1</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_2">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_2">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_2"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_2"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_2">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_2">2017/04/04                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_2">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_2">2017/04/04                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$3&#39;); auto_move();" style="height: 40px; cursor: pointer; background-color: rgb(255, 255, 255);">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl06$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_3" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl06$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_3" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_3">2</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_3">000011</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_3">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_3"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_3"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_3">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_3">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_3">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_3">2017/04/08                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$4&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl07$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_4" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl07$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_4" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_4">3</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_4">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_4">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_4"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_4"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_4">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_4">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_4">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_4">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$5&#39;); auto_move();" style="height: 40px; cursor: pointer; background-color: rgb(137, 187, 254);">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl08$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_5" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl08$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_5" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_5">4</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_5">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_5">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_5"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_5"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_5">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_5">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_5">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_5">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$6&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl09$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_6" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl09$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_6" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_6">555</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_6">5555</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_6">555</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_6">555</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_6">555</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_6">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_6">2017/04/10                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_6">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_6">2017/04/10                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$7&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl10$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_7" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl10$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_7" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_7">56</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_7">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_7">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_7"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_7"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_7">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_7">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_7">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_7">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$8&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl11$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_8" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl11$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_8" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_8">88</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_8">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_8">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_8"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_8"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_8">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_8">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_8">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_8">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$9&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl12$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_9" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl12$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_9" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_9">899</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_9">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_9">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_9"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_9"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_9">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_9">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_9">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_9">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$10&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl13$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_10" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl13$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_10" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_10">96</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_10">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_10">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_10"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_10"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_10">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_10">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_10">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_10">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$11&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl14$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_11" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl14$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_11" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_11">a</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_11">0000111</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_11">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_11"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_11"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_11">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_11">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_11">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_11">2017/04/08                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$12&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl15$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_12" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl15$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_12" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_12">aaaa</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_12">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_12">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_12"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_12"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_12">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_12">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_12">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_12">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$13&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl16$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_13" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl16$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_13" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_13">aaaaa</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_13">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_13">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_13"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_13"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_13">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_13">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_13">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_13">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$14&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl17$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_14" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl17$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_14" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_14">adasd</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_14">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_14">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_14"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_14"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_14">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_14">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_14">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_14">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$15&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl18$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_15" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl18$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_15" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_15">asdasd</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_15">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_15">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_15"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_15"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_15">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_15">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_15">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_15">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$16&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl19$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_16" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl19$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_16" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_16">f</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_16">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_16">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_16"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_16"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_16">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_16">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_16">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_16">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$17&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl20$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_17" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl20$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_17" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_17">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_17">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_17">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_17"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_17">5</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_17">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_17">2017/03/01                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_17">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_17">2017/04/02                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$18&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl21$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_18" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl21$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_18" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_18">Ghostasf</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_18">0000123</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_18">魂欸12</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_18">33131</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_18">55</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_18">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_18">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_18">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_18">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$19&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl22$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_19" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl22$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_19" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_19">Ghostdsgsdg</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_19">0000212</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_19">魂13欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_19">3</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_19"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_19">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_19">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_19">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_19">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$20&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl23$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_20" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl23$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_20" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_20">Ghosts</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_20">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_20">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_20"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_20"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_20">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_20">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_20">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_20">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$21&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl24$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_21" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl24$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_21" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_21">Ghostss</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_21">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_21">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_21"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_21"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_21">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_21">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_21">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_21">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$22&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl25$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_22" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl25$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_22" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_22">Ghosty</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_22">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_22">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_22"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_22"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_22">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_22">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_22">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_22">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$23&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl26$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_23" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl26$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_23" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_23">ssssssa</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_23">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_23">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_23"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_23"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_23">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_23">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_23">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_23">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$24&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl27$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_24" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl27$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_24" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_24">th</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_24">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_24">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_24"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_24"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_24">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_24">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_24">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_24">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$25&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl28$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_25" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl28$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_25" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_25">w</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_25">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_25">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_25"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_25"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_25">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_25">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_25">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_25">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$26&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl29$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_26" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl29$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_26" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_26">wa</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_26">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_26">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_26"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_26"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_26">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_26">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_26">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_26">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$27&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl30$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_27" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl30$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_27" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_27">ytjty</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_27">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_27">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_27"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_27"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_27">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_27">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_27">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_27">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$28&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl31$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_28" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl31$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_28" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_28">ytjtys</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_28">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_28">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_28"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_28"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_28">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_28">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_28">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_28">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$29&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl32$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_29" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl32$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_29" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_29">ytjtys1</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_29">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_29">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_29"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_29"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_29">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_29">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_29">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_29">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$30&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl33$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_30" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl33$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_30" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_30">ytjtys4</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_30">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_30">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_30"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_30"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_30">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_30">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_30">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_30">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$31&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl34$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_31" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl34$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_31" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_31">ytjtys7</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_31">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_31">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_31"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_31"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_31">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_31">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_31">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_31">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="no-border font-style1" onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$32&#39;); auto_move();" style="height:40px;cursor:pointer;">
+                                                            <td>
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl35$ibtn_edit" id="ContentPlaceHolder1_grid_data_m_ibtn_edit_32" onmouseover="this.src=&#39;/Image/edit_1.png&#39;" onmouseout="this.src=&#39;/Image/edit.png&#39;" src="./進銷存網站_files/edit.png">
+                                                                <input type="image" name="ctl00$ContentPlaceHolder1$grid_data_m$ctl35$ibtn_delete" id="ContentPlaceHolder1_grid_data_m_ibtn_delete_32" onmouseover="this.src=&#39;/Image/delete_1.png&#39;" onmouseout="this.src=&#39;/Image/delete.png&#39;" src="./進銷存網站_files/delete.png" onclick="return(confirm(&#39;確認要刪除嗎？&#39;));">
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_32">ytjtys7s</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_32">0000</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_32">魂欸</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_32"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_32"></span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_32">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_32">2017/04/03                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_32">Ghost</span>
+                                                            </td>
+                                                            <td>
+                                                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_32">2017/04/03                    </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="messagebox-target" id="errors">
+                                    <div class="messagebox-content">
+                                        <span id="lab_m_error"></span>
+                                    </div>
+                                    <a href="http://localhost:8312/MNDT1010.aspx#" class="messagebox-close"></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="aspNetHidden">
+
+
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            set_scroll();menu_show();//]]>
+        </script>
+        <span style="display: none !important;"><input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""></span><span style="display: none !important;"><input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""></span><span style="display: none !important;"><input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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"></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6F2A049C"></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value=""></span>
+    </form>
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"e5ef37cc079549479694553c82c195a0"}
+    </script>
+    <script type="text/javascript" src="./進銷存網站_files/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>

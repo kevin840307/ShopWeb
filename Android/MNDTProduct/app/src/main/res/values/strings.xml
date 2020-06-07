@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MNDTProduct</string>
+    <string name="load">載入中...</string>
+    <string name="login">登入</string>
+    <string name="open">打開</string>
+    <string name="close">關閉</string>
+
+</resources>

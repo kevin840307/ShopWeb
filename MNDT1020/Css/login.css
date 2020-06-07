@@ -1,0 +1,10 @@
+﻿.login-context-size1 {
+    height: 200px;
+    width: 300px;
+    border-radius: 10px;
+    position: relative;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

@@ -1,0 +1,514 @@
+CREATE TABLE [dbo].[MNDTuser](
+	[id] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[account] [nvarchar](15) NOT NULL,
+	[password] [nvarchar](25) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[address] [nvarchar](50) NOT NULL,
+	[phone] [nvarchar](10) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[status] [nvarchar](1) NOT NULL default 'N' 
+)
+
+CREATE TABLE [dbo].[MNDTuser_tran](
+	[id] int NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	PRIMARY KEY([id], [create_datetime])
+)
+
+
+CREATE TABLE [dbo].[MNDTprogram_master](
+	[program_id] [nvarchar](10) NOT NULL PRIMARY KEY,
+	[name] [nvarchar](15) NOT NULL,
+	[parent] [nvarchar](25) NOT NULL,
+	[url] [nvarchar](30) NOT NULL
+)
+
+CREATE TABLE [dbo].[MNDTprogram_details](
+	[program_id] [nvarchar](10) NOT NULL,
+	[group_id] [nvarchar](10) NOT NULL,
+	[read] [nvarchar](1) NOT NULL default 'Y' ,
+	[write] [nvarchar](1) NOT NULL default 'Y' ,
+	[execute] [nvarchar](1) NOT NULL default 'Y' ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([program_id], [group_id])
+)
+
+CREATE TABLE [dbo].[MNDTgroup_master](
+	[group_id] [nvarchar](10) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[description] [nvarchar](50) NOT NULL default '' ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([group_id])
+)
+
+CREATE TABLE [dbo].[MNDTgroup_details](
+	[group_id] [nvarchar](10) NOT NULL,
+	[id] int NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([group_id], [id])
+)
+
+CREATE TABLE [dbo].[MNDTkind_master](
+	[kind_id] [nvarchar](10) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[description] [nvarchar](50) NOT NULL default '' ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([kind_id])
+)
+
+CREATE TABLE [dbo].[MNDTkind_details](
+	[kind_id] [nvarchar](10) NOT NULL,
+	[code_id] [nvarchar](10) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[parameter] [nvarchar](50) NOT NULL default '' ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL default 'N' 
+	PRIMARY KEY([kind_id], [code_id])
+)
+
+CREATE TABLE [dbo].[MNDTkind_details_tran] (
+	[kind_id] [nvarchar](10) NOT NULL,
+	[code_id] [nvarchar](10) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([kind_id], [code_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTclient] (
+	[client_id] [nvarchar](15) NOT NULL,
+	[password] [nvarchar](25) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[email] [nvarchar](30) NOT NULL,
+	[address] [nvarchar](50) NOT NULL,
+	[tel] [nvarchar](10) NOT NULL,
+	[phone] [nvarchar](10) NOT NULL,
+	[description] [nvarchar](50) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([client_id])
+)
+
+CREATE TABLE [dbo].[MNDTclient_tran] (
+	[client_id] [nvarchar](15) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([client_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTcompany] (
+	[company_id] [nvarchar](15) NOT NULL,
+	[tax_id] [nvarchar](10) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[email] [nvarchar](30) NOT NULL,
+	[pay] [nvarchar](5) NOT NULL,
+	[address] [nvarchar](50) NOT NULL,
+	[tel] [nvarchar](10) NOT NULL,
+	[phone] [nvarchar](10) NOT NULL,
+	[description] [nvarchar](50) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([company_id])
+)
+
+CREATE TABLE [dbo].[MNDTcompany_tran] (
+	[company_id] [nvarchar](15) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([company_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTmaterial] (
+	[material_id] [nvarchar](15) NOT NULL,
+	[company_id] [nvarchar](15) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[unit] [nvarchar](5) NOT NULL,
+	[currency] [nvarchar](5) NOT NULL,
+	[price] int NOT NULL,
+	[shelf_life] int NOT NULL default 99999,
+	[description] [nvarchar](50) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([material_id])
+)
+
+
+CREATE TABLE [dbo].[MNDTmaterial_tran] (
+	[material_id] [nvarchar](15) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([material_id],[create_datetime])
+)
+
+
+CREATE TABLE [dbo].[MNDTproduct_master] (
+	[product_id] [nvarchar](15) NOT NULL,
+	[company_id] [nvarchar](15) NOT NULL,
+	[name] [nvarchar](10) NOT NULL,
+	[unit] [nvarchar](5) NOT NULL,
+	[currency] [nvarchar](5) NOT NULL,
+	[cost] int NOT NULL,
+	[price] int NOT NULL,
+	[shelf_life] int NOT NULL default 99999,
+	[description] [nvarchar](50) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([product_id])
+)
+
+
+CREATE TABLE [dbo].[MNDTproduct_details](
+	[product_id] [nvarchar](15) NOT NULL,
+	[material_id] [nvarchar](15) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([product_id], [material_id])
+)
+
+CREATE TABLE [dbo].[MNDTproduct_master_tran] (
+	[product_id] [nvarchar](15) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([product_id],[create_datetime])
+)
+
+
+CREATE TABLE [dbo].[MNDTpurchase_master] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[datetime] date NOT NULL,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([order_id])
+)
+
+CREATE TABLE [dbo].[MNDTpurchase_details](
+	[order_id] [nvarchar](20) NOT NULL,
+	[material_id] [nvarchar](15) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[modify_amount] int NOT NULL,
+	[modify_price] int NOT NULL,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id], [material_id])
+)
+
+CREATE TABLE [dbo].[MNDTpurchase_master_tran] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTquotes_master] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[client_id] [nvarchar](15) NOT NULL,
+	[datetime] date NOT NULL,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([order_id])
+)
+
+CREATE TABLE [dbo].[MNDTquotes_details](
+	[order_id] [nvarchar](20) NOT NULL,
+	[product_id] [nvarchar](15) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[modify_amount] int NOT NULL,
+	[modify_price] int NOT NULL,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,	
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id], [product_id])
+)
+
+CREATE TABLE [dbo].[MNDTquotes_master_tran] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTreceive_master] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[datetime] date NOT NULL,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([order_id])
+)
+
+CREATE TABLE [dbo].[MNDTreceive_details] (
+	[seq] int NOT NULL,
+	[order_id] [nvarchar](20) NOT NULL,
+	[material_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](5) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[pay_complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([seq],[order_id])
+)
+
+CREATE TABLE [dbo].[MNDTreceive_master_tran] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTreturn_master] (
+	[return_id] [nvarchar](20) NOT NULL,
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[datetime] date NOT NULL,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([return_id])
+)
+
+CREATE TABLE [dbo].[MNDTreturn_details] (
+	[seq] int NOT NULL,
+	[return_id] [nvarchar](20) NOT NULL,
+	[material_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](5) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[pay_complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([seq],[return_id])
+)
+
+CREATE TABLE [dbo].[MNDTreturn_master_tran] (
+	[return_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([return_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTsales_master] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[datetime] date NOT NULL,
+	[pay] [nvarchar](5) NOT NULL default '',
+	[order_status] [nvarchar](5) NOT NULL default '',
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([order_id])
+)
+
+CREATE TABLE [dbo].[MNDTsales_details] (
+	[seq] int NOT NULL,
+	[order_id] [nvarchar](20) NOT NULL,
+	[product_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](15) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL
+	PRIMARY KEY([seq],[order_id])
+)
+
+CREATE TABLE [dbo].[MNDTsales_master_tran] (
+	[order_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([order_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTSreturn_master] (
+	[return_id] [nvarchar](20) NOT NULL,
+	[order_id] [nvarchar](20) NOT NULL,
+	[id] int NOT NULL,
+	[datetime] date NOT NULL,
+	[complete] [nvarchar](1) NOT NULL  default 'N',
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([return_id])
+)
+
+CREATE TABLE [dbo].[MNDTSreturn_details] (
+	[seq] int NOT NULL,
+	[return_id] [nvarchar](20) NOT NULL,
+	[product_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](5) NOT NULL,
+	[amount] int NOT NULL default 0 ,
+	[price] int NOT NULL default 0 ,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL,
+	PRIMARY KEY([seq],[return_id])
+)
+
+CREATE TABLE [dbo].[MNDTSreturn_master_tran] (
+	[return_id] [nvarchar](20) NOT NULL,
+	[ip] [nvarchar](15) NOT NULL,
+	[status] [nvarchar](1) NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL
+	PRIMARY KEY([return_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTmaterial_stock] (
+	[material_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](15) NOT NULL default '',
+	[amount] int NOT NULL default 0 ,
+	[safe_amount] int NOT NULL default 0 ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([material_id],[warehouse_id])
+)
+
+CREATE TABLE [dbo].[MNDTmaterial_stock_tran] (
+	[material_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](15) NOT NULL default '',
+	[tran_amount] int NOT NULL default 0 ,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	PRIMARY KEY([material_id],[warehouse_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTproduct_stock] (
+	[product_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](15) NOT NULL default '',
+	[amount] int NOT NULL default 0 ,
+	[safe_amount] int NOT NULL default 0 ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([product_id],[warehouse_id])
+)
+
+CREATE TABLE [dbo].[MNDTproduct_stock_tran] (
+	[product_id] [nvarchar](15) NOT NULL,
+	[warehouse_id] [nvarchar](15) NOT NULL default '',
+	[tran_amount] int NOT NULL default 0 ,
+	[description] [nvarchar](50) NOT NULL default '',
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	PRIMARY KEY([product_id],[warehouse_id],[create_datetime])
+)
+
+CREATE TABLE [dbo].[MNDTshop_item] (
+	[product_id] [nvarchar](15) NOT NULL,
+	[category] [nvarchar](15) NOT NULL default '',
+	[content] text NOT NULL default '' ,
+	[description] [nvarchar](100) NOT NULL default '' ,
+	[remarks] [nvarchar](50) NOT NULL default '' ,
+	[type] [nvarchar](5) NOT NULL default '0' ,
+	[fold] float NOT NULL,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([product_id])
+)
+
+CREATE TABLE [dbo].[MNDTcarousel] (
+	[carousel_id] [nvarchar](15) NOT NULL,
+	[name] [nvarchar](15) NOT NULL default '',
+	[remarks] [nvarchar](50) NOT NULL default '' ,
+	[create_id] int NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	[modify_id] int NOT NULL,
+	[modify_datetime] datetime NOT NULL,
+	[status] [nvarchar](1) NOT NULL  default 'N',
+	PRIMARY KEY([carousel_id])
+)
+
+CREATE TABLE [dbo].[MNDTshop_cart] (
+	[client_id] [nvarchar](15) NOT NULL,
+	[product_id] [nvarchar](15) NOT NULL,
+	[type] int NOT NULL  default 1,
+	[amount] [nvarchar](15) NOT NULL,
+	[create_datetime] datetime NOT NULL,
+	PRIMARY KEY([client_id], [product_id], [type])
+)
+

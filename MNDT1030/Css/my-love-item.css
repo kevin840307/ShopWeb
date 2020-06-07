@@ -1,0 +1,116 @@
+﻿body {
+}
+
+.my-love-div {
+    width: calc(100%-20px);
+    padding: 10px;
+}
+
+    .my-love-div > .col-3 {
+        padding: 0px 5px 5px 5px;
+        float: left;
+        height: 100%;
+        width: calc(25% - 10px);
+    }
+
+        .my-love-div > .col-3 > .item-data {
+            width: calc(100% - 10px);
+            border: solid 1px #dfdfdf;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+
+            .my-love-div > .col-3 > .item-data:hover {
+                border: solid 1px #0094ff;
+            }
+
+            .my-love-div > .col-3 > .item-data > .item-data-img {
+                width: 100%;
+                height: 150px;
+            }
+
+            .my-love-div > .col-3 > .item-data > .item-data-name {
+                text-align: left;
+            }
+
+                .my-love-div > .col-3 > .item-data > .item-data-name > a {
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #3caadb;
+                    font-family: 'Yu Gothic UI';
+                }
+
+            .my-love-div > .col-3 > .item-data > .item-data-description {
+                text-align: left;
+                font-size: 13px;
+                color: #626262;
+                font-family: 'Yu Gothic UI';
+                word-break: break-all;
+            }
+
+            .my-love-div > .col-3 > .item-data > .item-data-price {
+                text-align: left;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: 'Yu Gothic UI';
+                word-break: break-all;
+            }
+
+.btn-buy {
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: solid #a9a9a9 1px;
+    background-color: #fff;
+    background-image: url(/image/buy_g.png);
+}
+
+.btn-like {
+    cursor: pointer;
+    width: 50%;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: solid #a9a9a9 1px;
+    background-color: #fff;
+    background-image: url(/image/love_r.png);
+}
+
+.btn-nlike {
+    cursor: pointer;
+    width: 50%;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: solid #a9a9a9 1px;
+    background-color: #fff;
+    background-image: url(/image/nlike.png);
+}
+
+@media screen and (max-width: 1280px) {
+    .my-love-div > .col-3 {
+        width: calc(33.3% - 10px);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .my-love-div > .col-3 {
+        width: calc(50% - 10px);
+    }
+}
+
+
+@media screen and (max-width: 720px) {
+    .my-love-div > .col-3 {
+        padding: 5px 0px 5px 0px;
+        width: calc(100% - 2px);
+    }
+}

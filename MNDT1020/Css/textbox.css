@@ -1,0 +1,61 @@
+﻿.text-size1 {
+    border-radius: 5px;
+    font-family: "Microsoft JhengHei";
+}
+
+.text-size2 {
+    width: 89%;
+    font-family: "Microsoft JhengHei";
+}
+
+
+
+.text-no-size {
+    resize: none;
+}
+
+.ajax__calendar_container {
+    border: #646464;
+    background-color: cornsilk;
+    color: burlywood;
+}
+
+.text-size3 {
+    height: 25px;
+    width: 30%;
+    border: 5px;
+    border-radius: 5px;
+    border-color: #36b2fe;
+    border-bottom: ridge 1.2px;
+    border-right: ridge 1.2px;
+    border-top: ridge 1.2px;
+    border-left: ridge 1.2px;
+    font-size: 18px;
+    font-family: "Microsoft JhengHei";
+}
+
+    .text-size3:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+.text-size4 {
+    width: 89%;
+    height: 25px;
+    border: 5px;
+    border-radius: 5px;
+    border-color: #36b2fe;
+    border-bottom: ridge 1.2px;
+    border-right: ridge 1.2px;
+    border-top: ridge 1.2px;
+    border-left: ridge 1.2px;
+    font-size: 18px;
+    font-family: "Microsoft JhengHei";
+}
+
+    .text-size4:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }

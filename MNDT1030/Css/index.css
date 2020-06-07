@@ -1,0 +1,554 @@
+﻿body {
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 40px;
+    background: rgb(237,237,237); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(216,216,216,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(216,216,216,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(237,237,237,1) 0%,rgba(216,216,216,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d8d8d8',GradientType=0 ); /* IE6-9 */
+}
+
+.title-content {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.title-text-p-left {
+    direction: ltr;
+    color: #808080;
+    font-size: 20px;
+    margin-top: 8px;
+    float: left;
+}
+
+.title-text-right {
+    color: #808080;
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    margin-top: 10px;
+    float: right;
+    margin-left: 10px;
+}
+
+.title-logout {
+    color: #808080;
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    margin-top: 10px;
+    float: right;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+    .title-logout:hover {
+        color: #000000;
+    }
+
+.title-text-p-right {
+    direction: rtl;
+    color: #808080;
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    margin-top: 4px;
+    float: right;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+    .title-text-p-right:hover {
+        color: #000000;
+        display: block;
+    }
+
+.hide-title-text {
+}
+
+
+.client {
+    top: 4px;
+    position: relative;
+    width: 21px;
+    height: 22px;
+    content: url(/image/review.png);
+}
+
+    .client:hover {
+        content: url(/image/review_1.png);
+    }
+
+.buy {
+    top: 3px;
+    position: relative;
+    width: 21px;
+    height: 22px;
+    content: url(/image/buy.png);
+}
+
+    .buy:hover {
+        content: url(/image/buy_1.png);
+        display: inline-block;
+    }
+
+.love {
+    top: 4px;
+    position: relative;
+    width: 21px;
+    height: 22px;
+    content: url(/image/like.png);
+}
+
+    .love:hover {
+        content: url(/image/like_1.png);
+    }
+
+.logo {
+    padding-top: 10px;
+    float: left;
+    width: 300px;
+    height: 50px;
+}
+
+.content {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.search-text-style1 {
+    top: 2px;
+    padding-left: 10px;
+    position: relative;
+    height: 35px;
+    width: 75%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #a9a9a9;
+    border-bottom: ridge 1px;
+    border-right: ridge 1px;
+    border-top: ridge 1px;
+    border-left: ridge 1px;
+    font-size: 18px;
+    font-family: Microsoft JhengHei;
+}
+
+    .search-text-style1:focus {
+        outline: none;
+        border-color: #4aadf8;
+        box-shadow: 0 0 10px #4aadf8;
+    }
+
+.gray {
+    color: #8a8a8a;
+    font-size: 15px;
+}
+
+.search-button-style1 {
+    font-family: 'Microsoft JhengHei';
+    height: 40px;
+    width: 75px;
+    padding: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -4px;
+    border: none;
+    background: #f5f5f5; /* Old browsers */
+}
+
+    .search-button-style1:hover {
+        cursor: pointer;
+        background: #ececec; /* Old browsers */
+    }
+
+    .search-button-style1:focus {
+        outline: none;
+        border-color: #ececec;
+        box-shadow: 0 0 10px #f5f5f5;
+    }
+
+.search {
+    float: left;
+    width: 700px;
+    padding-top: 10px;
+}
+
+.shop-cart {
+    padding-top: 10px;
+    width: 280px;
+    float: left;
+}
+
+
+.shop-cart-list {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    right: calc(50% - 640px);
+    left: auto;
+    border: none;
+    width: 280px;
+    z-index: 20;
+    border: solid 1px #808080;
+    background: rgb(232, 231, 231);
+}
+
+.shop-cart-button {
+    font-family: Microsoft JhengHei;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    color: #FFFFFF;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+    background: rgb(125,126,125); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+    .shop-cart-button:hover {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
+        background: rgb(69,72,77); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    }
+
+    .shop-cart-button:focus {
+        color: #000000;
+        outline: none;
+        border-color: #2ba4ff;
+        box-shadow: 0 0 10px #2ba4ff;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+        background: rgb(255,255,255); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    }
+
+.content-title {
+    position: relative;
+    z-index: 10;
+    float: left;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7cb1dd+0,469ac4+40,0576c1+100 */
+    background: rgb(124,177,221); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(124,177,221,1) 0%, rgba(70,154,196,1) 40%, rgba(5,118,193,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(124,177,221,1) 0%,rgba(70,154,196,1) 40%,rgba(5,118,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(124,177,221,1) 0%,rgba(70,154,196,1) 40%,rgba(5,118,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7cb1dd', endColorstr='#0576c1',GradientType=0 ); /* IE6-9 */
+}
+
+.text-style1 {
+    font-family: inherit;
+    font-family: 15px;
+}
+
+.hot-item-div {
+    float: left;
+    height: 413px;
+    width: 295px;
+    border-color: #a9a9a9;
+    border-bottom: ridge 1.2px;
+    border-right: ridge 1.2px;
+    border-top: ridge 1.2px;
+    border-left: ridge 1.2px;
+    margin: 10px;
+}
+
+.hot-img-div {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    height: 154px;
+}
+
+.hot-item-img {
+    height: 150px;
+}
+
+.hot-content-div {
+    width: 96%;
+    margin-left: 10px;
+    height: 200px;
+}
+
+    .hot-content-div > a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #3caadb;
+        font-family: 'Yu Gothic UI';
+    }
+
+        .hot-content-div > a:hover {
+            color: #4395b9;
+        }
+
+    .hot-content-div > p {
+        font-family: 'Yu Gothic UI';
+    }
+
+.hot-description {
+    font-size: 13px;
+    color: #626262;
+    height: 100px;
+}
+
+.hot-price {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Yu Gothic UI';
+}
+
+.hot-content-button {
+}
+
+    .hot-content-button > button {
+        cursor: pointer;
+        float: left;
+        width: calc(50% - 1px);
+        height: 40px;
+        margin-left: 1px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-color: #a9a9a9;
+        border-bottom: ridge 1.2px;
+        border-right: ridge 1px;
+        border-top: ridge 1.2px;
+        border-left: ridge 1px;
+        background-color: #fff;
+    }
+
+        .hot-content-button > button:hover {
+            outline: none;
+            border-color: #a9a9a9;
+            box-shadow: 0 0 10px #a9a9a9;
+        }
+
+        .hot-content-button > button:focus {
+            outline: none;
+            border-color: #a9a9a9;
+            box-shadow: 0 0 10px #a9a9a9;
+        }
+
+.btn-buy {
+    background-image: url(/image/buy_g.png);
+}
+
+
+    .btn-buy:hover {
+        background-image: url(/image/buy_1.png);
+    }
+
+.btn-like {
+    background-image: url(/image/love_r.png);
+}
+
+    .btn-like:hover {
+        background-image: url(/image/like_1.png);
+    }
+
+    .btn-nlike {
+    background-image: url(/image/nlike.png);
+}
+
+    .btn-nlike:hover {
+        background-image: url(/image/nlike_1.png);
+    }
+
+.bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    width: 100%;
+    background: rgb(56, 59, 63);
+    position: relative;
+    bottom: -20px;
+    float: left;
+}
+
+.bottom-div {
+    position: relative;
+    padding-top: 20px;
+    color: #FFFFFF;
+    margin: auto 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
+    height: 230px;
+    background: rgb(56, 59, 63);
+}
+
+.bottom-div-content {
+    float: left;
+    width: 25%;
+    background: rgb(56, 59, 63);
+}
+
+.bottom-div-last {
+    position: relative;
+    top: 10px;
+    width: 90%;
+}
+
+.bottom-div-content > ul > li {
+}
+
+    .bottom-div-content > ul > li > a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: 'Yu Gothic UI';
+        font-size: 13px;
+    }
+
+@media screen and (max-width: 1280px) {
+    .logo {
+        width: 200px;
+    }
+
+    .search {
+        width: 600px;
+    }
+
+    .shop-cart {
+        width: 200px;
+    }
+
+    .shop-cart-list {
+        right: calc(50% - 500px);
+    }
+
+    .title-content, .bottom-div, .content {
+        width: 1000px;
+    }
+
+    .hot-item-div {
+        width: 310px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        width: 200px;
+    }
+
+    .search {
+        width: 420px;
+    }
+
+    .shop-cart {
+        width: 180px;
+    }
+
+    .shop-cart-list {
+        right: calc(50% - 400px);
+    }
+
+    .title-content, .bottom-div, .content {
+        width: 800px;
+    }
+
+    .hide-title-text {
+        display: none;
+    }
+
+    .hot-item-div {
+        width: 243px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+
+    .logo {
+        width: 180px;
+    }
+
+    .search {
+        width: 350px;
+    }
+
+    .shop-cart {
+        width: 115px;
+    }
+
+    .shop-cart-list {
+        right: calc(50% - 325px);
+    }
+
+
+    .title-content, .bottom-div, .content {
+        width: 650px;
+    }
+
+    .hide-title-text {
+        display: none;
+    }
+
+    .hot-item-div {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .logo {
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .shop-cart {
+        width: 100%;
+    }
+
+    .shop-cart-list {
+       left: 5%;
+       width:90%;
+    }
+
+    .title-content, .bottom-div, .content {
+        width: 90%;
+    }
+
+    .hide-title-text {
+        display: none;
+    }
+
+    .bottom-div-content {
+        float: left;
+        width: 90%;
+    }
+
+    .search-text-style1 {
+        width: calc(100% - 100px);
+    }
+
+    .hot-item-div {
+        width: 95%;
+    }
+
+    .bottom {
+        height: 850px;
+    }
+}

@@ -1,0 +1,594 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" MaintainScrollPositionOnPostback="true" EnableEventValidation="false" Async="true" AutoEventWireup="true" CodeFile="MNDT2040.aspx.cs" Inherits="MNDT2040" %>
+
+<%@ Register Assembly="GGridView" Namespace="GGridView" TagPrefix="cc1" %>
+
+<asp:Content runat="server" ID="const" ContentPlaceHolderID="ContentPlaceHolder1">
+    <script type="text/javascript">
+        //\d = [0-9]
+        function check_price(e, pnumber) {
+            if (!/^\d{1,5}\.(\d{1,3})?$/.test(pnumber)) {
+                var newValue = /^\d{1,5}/.exec(e.value);
+                if (newValue != null) {
+                    e.value = newValue;
+                }
+                else {
+                    e.value = "";
+                }
+            }
+            return false;
+        }
+
+        function check_month(e, pnumber) {
+            if (!/^\d{1,2}\.(\d{1,1})?$/.test(pnumber)) {
+                var newValue = /^\d{1,2}/.exec(e.value);
+                if (newValue != null) {
+                    e.value = newValue;
+                }
+                else {
+                    e.value = "";
+                }
+            }
+            return false;
+        }
+
+        function file_image() {
+            document.getElementById('ContentPlaceHolder1_fv_master_form_fu_file_image_upload').click();
+        }
+
+        function file_image_data() {
+            document.getElementById('ContentPlaceHolder1_fv_master_form_text_file_image_data').value = document.getElementById('ContentPlaceHolder1_fv_master_form_fu_file_image_upload').value;
+        }
+
+        function delete_img(e) {
+            if (confirm("確認要刪除?!")) {
+                $.ajax({
+                    type: 'post',
+                    url: 'ActionService.asmx/fnDeleteProductImage',
+                    data: 'sFileName=' + e.alt,
+                    success: function (domXml) {
+                        var xmlDom = domXml;
+                        var result = xmlDom.childNodes[0].firstChild.nodeValue;
+                        if (result == 'true') {
+                            //$(e).parent().remove();
+                            $(e).remove();
+                            alert('刪除成功');
+                        } else {
+                            alert('刪除失敗');
+                        }
+                    },
+                    error: function () { alert('刪除失敗'); }
+                });
+            }
+        }
+        
+
+         $(function () {
+
+        });
+    </script>
+    <asp:UpdatePanel runat="server" UpdateMode="Conditional" ID="up_multi">
+        <ContentTemplate>
+            <asp:MultiView runat="server" ID="multi_view" ActiveViewIndex="0">
+                <asp:View runat="server" ID="view_master">
+                    <asp:Panel runat="server">
+                        <table class="blue-style2 table-size1">
+                            <tr>
+                                <td rowspan="3">&nbsp;查詢<br />
+                                    條件區</td>
+                            </tr>
+                            <tr>
+                                <td class="right">
+                                    <asp:Label runat="server" Text="產品父代碼：" CssClass="font-style1"></asp:Label>
+                                </td>
+                                <td class="left">
+                                    <asp:TextBox ID="text_product_kind" runat="server" CssClass="font-style1"></asp:TextBox>
+                                </td>
+
+
+                                <td class="right">
+                                    <asp:Label runat="server" Text="父代碼名稱：" CssClass="font-style1"></asp:Label>
+                                </td>
+                                <td class="left">
+                                    <asp:TextBox ID="text_product_kind_name" runat="server" CssClass="font-style1"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right">
+                                    <asp:Label runat="server" Text="產品子代碼：" CssClass="font-style1"></asp:Label>
+                                </td>
+                                <td class="left">
+                                    <asp:TextBox ID="text_product_code" runat="server" CssClass="font-style1"></asp:TextBox>
+                                </td>
+
+                                <td class="right">
+                                    <asp:Label runat="server" Text="子代碼名稱：" CssClass="font-style1"></asp:Label>
+                                </td>
+                                <td class="left">
+                                    <asp:TextBox ID="text_product_code_name" runat="server" CssClass="font-style1"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="center">
+                                    <asp:Button runat="server" Text="查詢" ID="btn_search" CssClass="blue-style6 button-size2" BorderStyle="None" OnClick="btn_search_Click" />
+                                    <asp:Button runat="server" Text="清除" CssClass="blue-style6 button-size2" BorderStyle="None" />
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+
+                    <asp:Panel runat="server" ScrollBars="Vertical" CssClass="div-scroll div-scroll-size5" ID="panel_scroll_m">
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate>
+                                <%--FreezeHeader="true" ScrollVertical="true" ScrollVerticalClass="div-scroll div-scroll-size2"--%>
+                                <cc1:GGridView runat="server" EmptyShowHeader="True" EmptyDataText="無顯示資料" OnRowDataBound="grid_data_m_RowDataBound" OnRowCommand="grid_data_m_RowCommand"
+                                    OnSelectedIndexChanged="grid_data_m_SelectedIndexChanged" OnSelectedIndexChanging="grid_data_m_SelectedIndexChanging"
+                                    Width="1480px" GridLines="Horizontal" AllowSorting="True" CssClass="white-style2 no-border border-style1 font-style2"
+                                    AutoGenerateColumns="False" AllowPaging="True" CellPadding="4" ForeColor="Black"
+                                    ID="grid_data_m" DataSourceID="sds_main" DataKeyNames="product_kind, product_code">
+
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="新增">
+                                            <HeaderTemplate>
+                                                <asp:ImageButton ID="ibtn_insert" CommandName="OpenInsert" OnClientClick="save_bottom();" runat="server" ImageUrl="~/Image/header_add.png" CssClass="margin-top-6"></asp:ImageButton>
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="ibtn_Select" CommandName="SelectData" runat="server" ImageUrl="~/Image/select.png" onmouseover="this.src='/Image/select_1.png'" onmouseout="this.src='/Image/select.png'" CommandArgument='<%# Container.DataItemIndex %>'></asp:ImageButton>
+                                                <asp:ImageButton ID="ibtn_delete" CommandName="Delete" runat="server" ImageUrl="~/Image/delete.png" onmouseover="this.src='/Image/delete_1.png'" onmouseout="this.src='/Image/delete.png'" OnClientClick="return(confirm('確認要刪除嗎？'))"></asp:ImageButton>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="父代碼" SortExpression="product_kind">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_kind" runat="server" Text='<%#Bind("product_kind") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="子代碼">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_code" runat="server" Text='<%#Bind("product_code") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="子代碼名稱">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_code_name" runat="server" Text='<%#Bind("product_code_name") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="廠商代號">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_company_id" runat="server" Text='<%#Bind("company_id") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="單位">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_unit" runat="server" Text='<%#Bind("product_unit") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="規格">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_norm" runat="server" Text='<%#Bind("product_norm") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="成本">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_cost" runat="server" Text='<%#Bind("product_cost") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="定價">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_pricing" runat="server" Text='<%#Bind("product_pricing") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="保存期限">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_deadline" runat="server" Text='<%#Bind("product_deadline") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="備註">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_product_remarks" runat="server" Text='<%#Bind("product_remarks") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="建立人員">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_create_user_id" runat="server" Text='<%#Bind("create_user_id") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="建立時間" SortExpression="create_datetime">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_create_datetime" runat="server" Text='<%#Bind("create_datetime") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="修改人員">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_modify_user_id" runat="server" Text='<%#Bind("modify_user_id") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="修改時間">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lab_modify_datetime" runat="server" Text='<%#Bind("modify_datetime") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="6.7%" />
+                                        </asp:TemplateField>
+                                    </Columns>
+
+                                    <PagerTemplate>
+                                        <table style="width: 100%">
+                                            <tr style="width: 100%">
+                                                <td class="left">
+                                                    <asp:LinkButton runat="server" ID="linkbtn_first" Text="第一頁" OnClick="linkbtn_first_Click"></asp:LinkButton>
+                                                    <asp:LinkButton runat="server" ID="linkbtn_next" Text="下一頁" OnClick="linkbtn_next_Click"></asp:LinkButton>
+                                                    <asp:LinkButton runat="server" ID="linkbtn_previous" Text="上一頁" OnClick="linkbtn_previous_Click"></asp:LinkButton>
+                                                    <asp:LinkButton runat="server" ID="linkbtn_last" Text="最後一頁" OnClick="linkbtn_last_Click"></asp:LinkButton>
+                                                </td>
+                                                <td class="right">
+                                                    <asp:DropDownList runat="server" ID="drop_page_index" CssClass="blue-style4 dropdwonlist_size1" OnDataBinding="drop_page_index_DataBinding" OnSelectedIndexChanged="drop_page_index_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                                    <asp:Label ID="lab_sum" runat="server" Text="顯示筆數："></asp:Label>
+                                                    <asp:DropDownList runat="server" ID="drop_page_size" CssClass="blue-style4 dropdwonlist_size1" OnDataBinding="drop_page_size_DataBinding" AutoPostBack="true" OnSelectedIndexChanged="drop_page_size_SelectedIndexChanged">
+                                                        <asp:ListItem>10</asp:ListItem>
+                                                        <asp:ListItem>20</asp:ListItem>
+                                                        <asp:ListItem>30</asp:ListItem>
+                                                        <asp:ListItem>40</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </PagerTemplate>
+                                    <EmptyDataTemplate>
+                                        無顯示資料!-
+                                    </EmptyDataTemplate>
+                                    <HeaderStyle CssClass="no-border header-style1 font-style1" ForeColor="White" Width="100%" />
+                                    <RowStyle CssClass="no-border font-style1" />
+                                    <FooterStyle CssClass="foot-style1" />
+                                    <PagerSettings Position="Top" />
+                                    <PagerStyle CssClass="gridpage-style1 font-style1" ForeColor="Black" HorizontalAlign="Right" />
+                                    <SelectedRowStyle CssClass="select-style1" Font-Bold="true" />
+                                    <SortedAscendingCellStyle CssClass="gray-style1" />
+                                    <SortedAscendingHeaderStyle CssClass="black-style1" />
+                                    <SortedDescendingCellStyle CssClass="gray-style12" />
+                                    <SortedDescendingHeaderStyle CssClass="black-style2" />
+                                </cc1:GGridView>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="btn_search" EventName="Click" />
+                                <asp:AsyncPostBackTrigger ControlID="grid_data_m" EventName="RowCommand" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                    </asp:Panel>
+                </asp:View>
+
+                <asp:View runat="server" ID="view_detail">
+                    <table class="blue-style2 table-size1 center">
+                        <tr>
+                            <td>主檔</td>
+                        </tr>
+                    </table>
+                    <asp:FormView runat="server" ID="fv_master_form" CssClass="max-width" DefaultMode="Edit" DataSourceID="sds_main" DataKeyNames="product_kind, product_code" OnItemCommand="form_view_master_ItemCommand">
+                        <InsertItemTemplate>
+                            <table class="max-width">
+                                <tr class="max-width">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品父代碼："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_product_kind" CssClass="dropdwonlist-size2" OnDataBinding="drop_product_kind_DataBinding"></asp:DropDownList>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品子代碼："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_code" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="子代碼名稱："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_code_name" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="廠商代號："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_company_id" CssClass="dropdwonlist-size2" OnDataBinding="drop_company_id_DataBinding"></asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品單位："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_product_unit" CssClass="dropdwonlist-size2" OnDataBinding="drop_product_unit_DataBinding"></asp:DropDownList>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品規格："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_norm" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品成本："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_cost" onkeyup="return check_price(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品定價："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_pricing" onkeyup="return check_price(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="保存期限(月)："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_deadline" onkeyup="return check_month(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="備註："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_remarks" Width="90%" TextMode="MultiLine" CssClass="text-no-size text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+
+                                <tr class="row-style1">
+                                    <td colspan="5" class="center">
+                                        <asp:Button runat="server" CssClass="blue-style6 button-size2" Text="新增" CommandName="InsertData" />
+                                        <asp:Button runat="server" CssClass="blue-style6 button-size2" Text="取消" CommandName="Cancel" ID="btn_master_cancel" />
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </InsertItemTemplate>
+
+                        <EditItemTemplate>
+                            <table class="max-width">
+                                <tr class="max-width row-style1">
+                                    <td colspan="4" rowspan="6" class="left">
+                                        <asp:ImageButton ID="imgbtn_last" runat="server" ImageUrl="~/Image/last_one.png" onmouseover="this.src='/Image/last_one_1.png'" onmouseout="this.src='/Image/last_one.png'" OnClick="imgbtn_last_Click" />
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品父代碼："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_product_kind" SelectedValue='<%#Bind("product_kind") %>' Enabled="false" CssClass="dropdwonlist-size2" OnDataBinding="drop_product_kind_DataBinding"></asp:DropDownList>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品子代碼："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_code" Text='<%#Bind("product_code") %>' Enabled="false" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                    <td colspan="4" rowspan="6" class="right">
+                                        <asp:ImageButton ID="imgbtn_next" runat="server" ImageUrl="~/Image/next_one.png" onmouseover="this.src='/Image/next_one_1.png'" onmouseout="this.src='/Image/next_one.png'" OnClick="imgbtn_next_Click" />
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="子代碼名稱："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_code_name" Text='<%#Bind("product_code_name") %>' CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="廠商代號："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_company_id" SelectedValue='<%#Bind("company_id") %>' CssClass="dropdwonlist-size2" OnDataBinding="drop_company_id_DataBinding"></asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品單位："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:DropDownList runat="server" ID="drop_product_unit" SelectedValue='<%#Bind("product_unit") %>' CssClass="dropdwonlist-size2" OnDataBinding="drop_product_unit_DataBinding"></asp:DropDownList>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品規格："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_norm" Text='<%#Bind("product_norm") %>' CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品成本："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_cost" Text='<%#Bind("product_cost") %>' onkeyup="return check_price(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="產品定價："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_pricing" Text='<%#Bind("product_pricing") %>' onkeyup="return check_price(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="保存期限(月)："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_deadline" Text='<%#Bind("product_deadline") %>' onkeyup="return check_month(this,value)" CssClass="text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="row-style1">
+                                    <td class="right">
+                                        <asp:Label runat="server" Text="備註："></asp:Label>
+                                    </td>
+                                    <td class="left">
+                                        <asp:TextBox runat="server" ID="text_product_remarks" Text='<%#Bind("product_remarks") %>' Width="90%" TextMode="MultiLine" CssClass="text-no-size text-size2"></asp:TextBox>
+                                    </td>
+                                </tr>
+
+                                <tr class="row-style1">
+
+                                    <td colspan="9" class="center">
+                                        <asp:Button runat="server" CssClass="blue-style6 button-size2" Text="更新" CommandName="Update" OnClientClick="return(confirm('確認要更新嗎？'))" />
+                                        <asp:Button runat="server" CssClass="blue-style6 button-size2" Text="刪除" CommandName="Delete" OnClientClick="return(confirm('確認要刪除嗎？'))" />
+                                        <asp:Button runat="server" CssClass="blue-style6 button-size2" Text="取消" CommandName="Cancel" ID="btn_master_cancel" />
+                                    </td>
+
+                                </tr>
+                                <tr class="row-style1">
+                                    <td colspan="10" class="center">
+                                        <asp:UpdatePanel runat="server">
+                                            <ContentTemplate>
+                                                <asp:FileUpload runat="server" AllowMultiple="true" ID="fu_file_image_upload" Width="0%" Height="0%" onchange="file_image_data()" />
+                                                <asp:Button runat="server" Text="上傳" ID="btn_save_image" OnClick="btn_save_image_Click" CommandName="111" BorderStyle="None" CssClass="blue-style6 button-size2" />
+                                                <asp:Button runat="server" Text="選擇圖片" ID="btn_file_image" OnClientClick="file_image(); return false;" BorderStyle="None" CssClass="blue-style6 button-size2" />
+                                                <asp:TextBox runat="server" ID="text_file_image_data" Text="檔案路徑" BorderStyle="None" Enabled="false" CssClass="blue-style1"></asp:TextBox>
+                                            </ContentTemplate>
+                                            <Triggers>
+                                                <asp:PostBackTrigger ControlID="btn_save_image" />
+                                            </Triggers>
+                                        </asp:UpdatePanel>
+                                    </td>
+
+                                </tr>
+                                <tr class="row-style1 max-width">
+                                    <td colspan="10"class="center">
+                                        <asp:Panel runat="server" ScrollBars="Vertical" CssClass="div-scroll div-scroll-size6">
+                                          <asp:Literal ID="lt_image_html" runat="server" OnDataBinding="lt_image_html_DataBinding"></asp:Literal>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </EditItemTemplate>
+
+                    </asp:FormView>
+                </asp:View>
+            </asp:MultiView>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="grid_data_m" EventName="RowCommand" />
+            <%-- <asp:AsyncPostBackTrigger ControlID="form_view_master" EventName="ItemCommand" />--%>
+        </Triggers>
+    </asp:UpdatePanel>
+
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
+    <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="false" UpdateMode="conditional">
+        <ContentTemplate>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btn_search" EventName="Click" />
+        </Triggers>
+    </asp:UpdatePanel>--%>
+    <asp:SqlDataSource ID="sds_main" OnUpdated="sds_main_Updated" runat="server" ConnectionString="<%$ ConnectionStrings:MNDT %>" OldValuesParameterFormatString="original_{0}" ProviderName="<%$ ConnectionStrings:MNDT.ProviderName %>" UpdateCommand="UPDATE [MNDTproduct_details]
+   SET [product_code_name] = @product_code_name
+      ,[company_id] = @company_id
+      ,[product_unit] = @product_unit
+      ,[product_norm] = @product_norm
+      ,[product_cost] = @product_cost
+      ,[product_pricing] = @product_pricing
+      ,[product_deadline] = @product_deadline
+      ,[product_remarks] = @product_remarks
+      ,[modify_user_id] = @sId
+      ,[modify_datetime] = GETDATE()
+ WHERE [product_kind] = @original_product_kind
+	AND [product_code] = @original_product_code"
+        DeleteCommand="DELETE [MNDTproduct_master] 
+WHERE product_kind = @original_product_kind
+
+DELETE [MNDTproduct_details] 
+WHERE product_kind = @original_product_kind"
+        InsertCommand="INSERT INTO [MNDTproduct_details]
+           ([product_kind]
+           ,[product_code]
+           ,[product_code_name]
+           ,[company_id]
+           ,[product_unit]
+           ,[product_norm]
+           ,[product_cost]
+           ,[product_pricing]
+           ,[product_deadline]
+           ,[product_remarks]
+           ,[create_user_id]
+           ,[create_datetime]
+           ,[modify_user_id]
+           ,[modify_datetime])
+     VALUES
+           (@product_kind
+           ,@product_code
+           ,@product_code_name
+           ,@company_id
+           ,@product_unit
+           ,@product_norm
+           ,@product_cost
+           ,@product_pricing
+           ,@product_deadline
+           ,@product_remarks
+           ,@sId
+           ,GETDATE()
+           ,@sId
+           ,GETDATE())"
+        OnInserted="sds_main_Inserted" OnDeleted="sds_main_Deleted">
+        <DeleteParameters>
+            <asp:Parameter Name="original_product_kind" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="product_kind" />
+            <asp:Parameter Name="product_code" />
+            <asp:Parameter Name="product_code_name" />
+            <asp:Parameter Name="company_id" />
+            <asp:Parameter Name="product_unit" />
+            <asp:Parameter Name="product_norm" />
+            <asp:Parameter Name="product_cost" />
+            <asp:Parameter Name="product_pricing" />
+            <asp:Parameter Name="product_deadline" />
+            <asp:Parameter Name="product_remarks" />
+            <asp:SessionParameter Name="sId" SessionField="sId" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:SessionParameter Name="sId" SessionField="sId" />
+            <asp:Parameter Name="product_code_name" />
+            <asp:Parameter Name="company_id" />
+            <asp:Parameter Name="product_unit" />
+            <asp:Parameter Name="product_norm" />
+            <asp:Parameter Name="product_cost" />
+            <asp:Parameter Name="product_pricing" />
+            <asp:Parameter Name="product_deadline" />
+            <asp:Parameter Name="product_remarks" />
+            <asp:Parameter Name="original_product_kind" />
+            <asp:Parameter Name="original_product_code" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+</asp:Content>

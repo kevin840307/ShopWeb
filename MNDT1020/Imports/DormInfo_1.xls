@@ -1,0 +1,267 @@
+<meta http-equiv=Content-Type content=text/html;charset=utf-8><style> .text { mso-number-format:\; } </script> <div>
+	<table class="grid-view" cellspacing="0" cellpadding="4" rules="rows" id="ContentPlaceHolder1_grid_data_m" style="color:Black;background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;width:1005px;border-collapse:collapse;">
+		<tr align="right" style="color:Black;background-color:White;border-color:#9900FF;border-style:Ridge;">
+			<td colspan="10">
+                        <table style="width: 100%">
+                            <tr style="width: 100%">
+                                <td class="left">
+                                    <a id="ContentPlaceHolder1_grid_data_m_linkbtn_first" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$linkbtn_first&#39;,&#39;&#39;)">第一頁</a>
+                                    <a id="ContentPlaceHolder1_grid_data_m_linkbtn_next" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$linkbtn_next&#39;,&#39;&#39;)">下一頁</a>
+                                    <a id="ContentPlaceHolder1_grid_data_m_linkbtn_previous" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$linkbtn_previous&#39;,&#39;&#39;)">上一頁</a>
+                                    <a id="ContentPlaceHolder1_grid_data_m_linkbtn_last" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$linkbtn_last&#39;,&#39;&#39;)">最後一頁</a>
+                                </td>
+                                <td class="right">
+                                    <select name="ctl00$ContentPlaceHolder1$grid_data_m$ctl01$drop_page_index" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$drop_page_index\&#39;,\&#39;\&#39;)&#39;, 0)" id="ContentPlaceHolder1_grid_data_m_drop_page_index" class="dropdownlist-style1">
+				<option selected="selected" value="0">第1頁</option>
+				<option value="1">第2頁</option>
+
+			</select>
+                                    <span id="ContentPlaceHolder1_grid_data_m_lab_sum">顯示筆數：</span>
+                                    <select name="ctl00$ContentPlaceHolder1$grid_data_m$ctl01$drop_page_size" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl01$drop_page_size\&#39;,\&#39;\&#39;)&#39;, 0)" id="ContentPlaceHolder1_grid_data_m_drop_page_size" class="dropdownlist-style1">
+				<option selected="selected" value="10">10</option>
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+
+			</select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+		</tr><tr style="color:White;background-color:#333333;border-style:Groove;font-weight:bold;">
+			<th scope="col" style="width:10%;">
+                                <a onclick="ss();" id="ContentPlaceHolder1_grid_data_m_linkbtn_insert" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl02$linkbtn_insert&#39;,&#39;&#39;)" style="color:Yellow;">新增</a>
+                            </th><th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$account_id&#39;)" style="color:White;">帳號</a></th><th scope="col" style="width:10%;">密碼</th><th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$account_name&#39;)" style="color:White;">名稱</a></th><th scope="col" style="width:10%;">地址</th><th scope="col" style="width:10%;">手機</th><th scope="col" style="width:10%;">建立人員</th><th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$create_datetime&#39;)" style="color:White;">建立時間</a></th><th scope="col" style="width:10%;">修改人員</th><th scope="col" style="width:10%;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Sort$modify_datetime&#39;)" style="color:White;">修改時間</a></th>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$0&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_0" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl03$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_0" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl03$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_0">123</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_0">2315</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_0">32133</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_0">2133</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_0">215</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_0">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_0">2017/03/31                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_0">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_0">2017/03/31                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$1&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl04$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl04$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_1">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_1">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_1">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_1"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_1"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_1">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_1">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_1">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_1">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$2&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_2" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl05$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_2" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl05$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_2">Ghosta</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_2">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_2">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_2"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_2"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_2">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_2">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_2">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_2">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$3&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_3" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl06$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_3" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl06$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_3">Ghostasf</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_3">0000123</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_3">魂欸12</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_3">33131</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_3">55</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_3">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_3">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_3">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_3">2017/03/30                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$4&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_4" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl07$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_4" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl07$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_4">Ghostdsgsdg</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_4">0000212</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_4">魂13欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_4">3</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_4"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_4">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_4">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_4">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_4">2017/03/30                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$5&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_5" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl08$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_5" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl08$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_5">Ghosts</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_5">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_5">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_5"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_5"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_5">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_5">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_5">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_5">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$6&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_6" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl09$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_6" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl09$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_6">Ghostss</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_6">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_6">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_6"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_6"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_6">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_6">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_6">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_6">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$7&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_7" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl10$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_7" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl10$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_7">Ghosty</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_7">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_7">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_7"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_7"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_7">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_7">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_7">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_7">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$8&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_8" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl11$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_8" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl11$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_8">ssssssa</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_8">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_8">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_8"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_8"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_8">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_8">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_8">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_8">2017/03/01                    </span>
+                            </td>
+		</tr><tr onmouseover="this.style.backgroundColor=&#39;#89BBFE&#39;" onmouseout="this.style.backgroundColor=&#39;#FFFFFF&#39;" onclick="__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m&#39;,&#39;Select$9&#39;)" style="border-style:None;height:40px;cursor:pointer;">
+			<td>
+                                <a id="ContentPlaceHolder1_grid_data_m_linkbtn_edit_9" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl12$linkbtn_edit&#39;,&#39;&#39;)">編輯</a>
+                                <a onclick="return(confirm(&#39;確認要刪除嗎？&#39;));" id="ContentPlaceHolder1_grid_data_m_linkbtn_delete_9" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$grid_data_m$ctl12$linkbtn_delete&#39;,&#39;&#39;)">刪除</a>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_id_9">th</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_password_9">0000</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_name_9">魂欸</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_addr_9"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_account_phone_9"></span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_user_id_9">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_create_datetime_9">2017/03/01                    </span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_user_id_9">Ghost</span>
+                            </td><td>
+                                <span id="ContentPlaceHolder1_grid_data_m_lab_modify_datetime_9">2017/03/01                    </span>
+                            </td>
+		</tr>
+	</table>
+</div>

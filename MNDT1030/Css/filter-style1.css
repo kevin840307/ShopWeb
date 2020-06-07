@@ -1,0 +1,69 @@
+﻿
+
+
+.filter-style1 > .general {
+    font-family: 'Microsoft JhengHei';
+    font-weight: bold;
+    padding-top: 5px;
+    width: 100%;
+}
+
+    .filter-style1 > .general .input-data {
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 1px #c1c1c1;
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+        width: calc(100% - 20px);
+    }
+
+    .filter-style1 > .general .input-data:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+
+    .filter-style1 > .general .drop-style1 {
+        padding: 9px;
+        border-radius: 5px;
+        border: solid 1px #c1c1c1;
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+        width: 100%;
+    }
+
+        .filter-style1 > .general .drop-style1:focus {
+            outline: none;
+            border-color: #36b2fe;
+            box-shadow: 0 0 10px #36b2fe;
+        }
+
+.filter-style1 > .general-center {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+    .filter-style1 > .general-center input[type='button'] {
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        background: #36b2fe;
+        border: solid 1px #e9e9e9;
+        color: #ffffff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .filter-style1 > .general-center input[type='button']:hover {
+            background: #20a4f6;
+        }
+
+        .filter-style1 > .general-center input[type='button']:focus {
+            outline: none;
+            border-color: #36b2fe;
+            box-shadow: 0 0 10px #36b2fe;
+        }

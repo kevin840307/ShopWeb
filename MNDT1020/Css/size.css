@@ -1,0 +1,80 @@
+﻿
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.pointer-style1 {
+    cursor:pointer;
+}
+
+.font-style1 {
+    font-family: "Microsoft JhengHei";
+}
+
+.font-style2 {
+    font-family: "Microsoft JhengHei";
+    color: black;
+}
+
+
+.max-width-height {
+    height: 100%;
+    width: 100%;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.medium-width {
+    width: 50%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+
+.width-60 {
+    width: 60%;
+}
+
+
+.top-left {
+    vertical-align: top;
+    text-align: left;
+}
+
+.hide-style {
+    display: none;
+}
+
+.margin-left-100 {
+    margin-left: 100px;
+}
+
+.margin-top-6 {
+    margin-top: 3px;
+}
+
+.margin-top-6 >input {
+    margin-top: 6px;
+}
+
+.check-style1 > input {
+    margin-top: 3px;
+    height: 30px;
+    width: 30px;
+}
+
+.row-style1 {
+    height: 30px;
+}

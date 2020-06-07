@@ -1,0 +1,177 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.treebox {
+    width: 200px;
+    background: #85A2DC;
+}
+
+.menu {
+    overflow: hidden;
+    border-color: #7443fa;
+    border-style: groove;
+    border-width: 0 1px 1px;
+    border-bottom: none;
+}
+/*第一層*/
+.level1 > a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    padding-left: 50px;
+    border-bottom: 1px dotted #000;
+    font-size: 16px;
+    position: relative;
+    transition: all .5s ease 0s;
+}
+
+    .level1 > a:hover {
+        text-decoration: none;
+        background-color: #264D9B;
+        color: #85A2DC;
+    }
+
+
+/*第二層*/
+.level2 {
+    background: #615D6C;
+}
+
+
+.level2-lu-a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    text-indent: 60px;
+    font-size: 14px;
+    transition: all 1s ease 0s;
+}
+
+.level2 li a:hover {
+    text-decoration: none;
+    background-color: #ddd;
+    color: #000;
+}
+
+.show {
+    display: block;
+}
+
+.hide > div > a {
+    border-color: #7443fa;
+    border-style: groove;
+    border-width: 0 1px 1px;
+    display: block;
+    height: 18px;
+    line-height: 20px;
+    color: #fff;
+    padding-left: 50px;
+    font-size: 15px;
+    position: relative;
+    transition: all .5s ease 0s;
+}
+
+    .hide > div > a:hover {
+        text-decoration: none;
+        background-color: #89bbfe;
+        color: #000;
+    }
+
+.logout > a {
+    display: block;
+    height: 25px;
+    line-height: 20px;
+    color: #fff;
+    padding-left: 50px;
+    padding-top: 2px;
+    border-bottom: 1px dotted #7443fa;
+    font-size: 16px;
+    position: relative;
+    transition: all .5s ease 0s;
+}
+
+    .logout > a:hover {
+        text-decoration: none;
+        background-color: #89bbfe;
+        color: #000;
+    }
+
+.select_style1 {
+    text-decoration: none;
+    background-color: #ddd;
+    color: #000;
+}
+
+
+
+.current {
+    background: #3F65AC;
+    color: #85A2DC;
+}
+
+/*圖示*/
+.ico {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    background-repeat: no-repeat;
+    background-image: url(/image/ico1.png);
+}
+
+.sico {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 2px;
+    background-repeat: no-repeat;
+    background-image: url(/image/ico1.png);
+}
+
+/*箭頭*/
+i {
+    width: 20px;
+    height: 10px;
+    background-image: url(/image/arrow.png);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+    i.up {
+        background-position: 0 0;
+    }
+
+    i.down {
+        background-position: 0 -10px;
+    }
+
+.ico1 {
+    background-position: 0 0;
+}
+
+.ico5 {
+    background-position: 0 -80px;
+}
+
+.hide-obj {
+    display: none;
+}

@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/MasterMenu.ascx" TagPrefix="mm" TagName="MasterMenu" %>
+<%@ Register Src="~/TitleButton.ascx" TagPrefix="tb" TagName="TitleButton" %>
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>進銷存網站</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Css/bakdround.css" rel="stylesheet" />
+    <link href="Css/size.css" rel="stylesheet" />
+    <link href="Css/full_bakdround.css" rel="stylesheet" />
+    <link href="Css/table.css" rel="stylesheet" />
+    <link href="Css/gridview.css" rel="stylesheet" />
+    <script src="Js/jquery-1.8.0.js" type="text/javascript"></script>
+    <link href="Css/button.css" rel="stylesheet" />
+    <link href="Css/textbox.css" rel="stylesheet" />
+    <link href="Css/dropdownlist.css" rel="stylesheet" />
+    <link href="Css/messagebox.css" rel="stylesheet" />
+    <script src="Js/masterJS.js"></script>
+    <link href="Css/dropdownlist.css" rel="stylesheet" />
+    <script src="Js/jquery-1.8.3.min.js"></script>
+
+</head>
+<body class="green-style1">
+    <form id="form1" runat="server" class="max-width-height">
+        <%-- <iframe width="0" height="0" style="display:none;" src="https://www.youtube.com/embed/55bwCJgBO6A?autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+        --%>
+
+        <%--<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" >
+        </asp:ScriptManager>--%>
+         <asp:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true" EnablePageMethods="true"
+        EnableScriptLocalization="true" ID="ToolkitScriptManager1" ScriptMode="Debug" CombineScripts="false" />
+
+        <asp:Panel runat="server" CssClass="max-width-height">
+
+            <table class="table-size2">
+                <tr style="position: fixed; left: 0px;">
+                    <td>
+                        <div class="table-size4 top-left">
+                            <mm:MasterMenu runat="server" ID="master_menu" />
+                        </div>
+                    </td>
+                </tr>
+                <tr style="height: 100%;" class="white-style1">
+                    <td>
+                        <div class="table-size3">
+                            <div id="message" style="display: none; position: fixed; background: #ff84e4; width: 1024px; top: 0;">
+                                <asp:Label ID="lab_message" runat="server"></asp:Label>
+                            </div>
+                            <div class="center">
+                                <asp:Label runat="server" CssClass="font-style1" ID="lab_title">首頁</asp:Label>
+                            </div>
+                            <tb:TitleButton runat="server" ID="title_button" />
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <div class="messagebox-target" id="errors">
+                                <div class="messagebox-content">
+                                    <asp:Label ID="lab_m_error" runat="server"></asp:Label>
+                                </div>
+                                <a href="#" class="messagebox-close"></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+
+    </form>
+</body>
+</html>

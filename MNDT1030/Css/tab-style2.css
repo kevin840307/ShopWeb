@@ -1,0 +1,60 @@
+﻿.tab-style2 .tab-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: "Microsoft JhengHei";
+    width: 100%;
+}
+
+
+
+    .tab-style2 .tab-items > .tab-item {
+        border-radius: 5px;
+        width: calc(100% - 10px);
+        line-height: 40px;
+        padding: 5px;
+        display: block;
+        color: #0094ff;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+        .tab-style2 .tab-items > .tab-item:hover {
+            background: #f1f1f1;
+        }
+
+
+        .tab-style2 .tab-items > .tab-item .mark {
+            width: 15px;
+            height: 15px;
+            content: url(../Image/menu-mark.png);
+        }
+
+        .tab-style2 .tab-items > .tab-item.select {
+            background: #749fe7;
+            color: #ffffff;
+        }
+
+            .tab-style2 .tab-items > .tab-item.select:hover {
+                background: #5c86cc;
+            }
+
+            .tab-style2 .tab-items > .tab-item.select .mark {
+                content: url(../Image/menu-mark-select.png);
+            }
+
+.tab-style2 > .tab-items > .tab-item > a {
+    text-decoration: none;
+    color: #218afe;
+    height: 40px;
+    font-family: 'Yu Gothic UI';
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+
+.tab-style2 .tab-content.hide {
+    display: none;
+    transition: all 0.3s;
+}

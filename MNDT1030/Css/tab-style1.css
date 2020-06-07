@@ -1,0 +1,87 @@
+﻿
+/*------------------------------------------tab框-----------------------------------*/
+.tab-style1 {
+    height: 40px;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Microsoft JhengHei";
+    /*margin-top: 20px;*/
+}
+
+    /*------------------------------------------tab 內容-----------------------------------*/
+    .tab-style1 > .tab-content.hide {
+        display: none;
+    }
+
+    /*------------------------------------------tab樣式-----------------------------------*/
+    .tab-style1 > .tab-items {
+        list-style: none;
+        padding: 0;
+        float: left;
+        display: inline-block;
+        width: 100%;
+    }
+
+        .tab-style1 > .tab-items > .tab-item {
+            line-height: 39px;
+            float: left;
+            text-align: center;
+            padding: 0;
+            position: relative;
+            width: 24%;
+            min-width: 100px;
+            border-bottom: solid 1px #c8c8c8;
+            z-index: 2;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: #218afe;
+            cursor: pointer;
+        }
+
+            .tab-style1 > .tab-items > .tab-item:hover {
+                background: #efefef;
+            }
+
+            .tab-style1 > .tab-items > .tab-item.select {
+                border-bottom: solid 0px;
+                border-top: solid 1px #c8c8c8;
+                border-left: solid 1px #c8c8c8;
+                border-right: solid 1px #c8c8c8;
+                background: #fff;
+                color: #218afe;
+            }
+
+                .tab-style1 > .tab-items > .tab-item.select:hover {
+                    background: #fff;
+                }
+
+        .tab-style1 > .tab-items > .prohibited {
+            cursor: no-drop;
+            color: #808080;
+        }
+
+
+
+@media screen and (max-width: 720px) {
+
+    /*------------------------------------------tab的list外框--------------------------------------*/
+    .frame-style1, .frame-style2 {
+        border: 0px;
+        width: 100%;
+    }
+    /*------------------------------------------tab樣式-----------------------------------*/
+    .tab-style1 > .tab-items, .tab-style1 > .tab-items > .tab-item {
+        width: 100%;
+        border-bottom: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+        .tab-style1 > .tab-items > .tab-item.select {
+            background: #efefef;
+            border-bottom: solid 1px #c8c8c8;
+            border-top: solid 1px #c8c8c8;
+            border-left: 0px;
+            border-right: 0px;
+        }
+}

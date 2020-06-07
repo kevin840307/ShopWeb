@@ -1,0 +1,65 @@
+﻿html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/*---------------------------------------載入--------------------------------------*/
+
+#loading {
+    font-family: 'Microsoft JhengHei';
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.50);
+    color: #fff;
+    position: fixed;
+    font-size: larger;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+/*---------------------------------報表外框--------------------------------------*/
+
+#print_frame {
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    #print_frame > h3 {
+        font-family: 'Microsoft JhengHei UI',sans-serif;
+        font-size: 20px;
+    }
+/*-------------------------------------table樣式---------------------------*/
+.list-general {
+    font-family: 'Microsoft JhengHei UI',sans-serif;
+    width: 100%;
+    font-size: 15px;
+    border: solid 1px #808080;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+    .list-general > thead > tr > td {
+        border-bottom: solid 1px #808080;
+    }
+
+    .list-general td {
+        padding: 5px;
+    }
+
+    .list-general .general {
+        min-width: 80px;
+    }
+
+    .list-general .general-short {
+        min-width: 40px;
+    }

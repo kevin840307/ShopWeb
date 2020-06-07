@@ -1,0 +1,75 @@
+﻿.shop-cart-list .table-img > a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    display: block;
+}
+
+.shop-cart-list .table-img {
+    border: solid 1px #808080;
+    border-color: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    background: #ffffff;
+    margin: 5px;
+    display: inline-block;
+}
+
+.shop-cart-list .table-str {
+    vertical-align: top;
+    width: 50px;
+}
+
+    .shop-cart-list .table-str > a {
+        color: #2284d5;
+        font-family: Microsoft JhengHei;
+        font-size: 13px;
+    }
+
+.shop-cart-list .table-num {
+    color: #808080;
+    font-family: Microsoft JhengHei;
+    font-size: 13px;
+    vertical-align: top;
+    text-align: right;
+    width: 55px;
+}
+
+.shop-cart-list .table-btn {
+    vertical-align:top;
+}
+
+.shop-cart-list .table-btn > button {
+    background: url(/image/shop_delete.png);
+    width:35px;
+    height:35px;
+   display: inline-block;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border:none;
+}
+
+    .shop-cart-list .table-btn > button:hover {
+        background-image: url(/image/shop_delete_1.png);
+    }
+
+.shop-cart-list .table-img > a > img {
+    height: 40px;
+    width: 40px;
+}
+
+.shop-cart-list ul {
+    margin: 0 auto;
+    list-style: none;
+    padding: 0px;
+    background: #f6f6f6;
+    margin-top: 5px;
+}
+
+.shop-cart-list a {
+    cursor: pointer;
+    text-decoration: none;
+}

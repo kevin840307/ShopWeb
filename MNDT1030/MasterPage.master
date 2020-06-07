@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<link href="Css/master.css" rel="stylesheet" />
+<link href="Css/menu.css" rel="stylesheet" />
+<script src="Scripts/jquery-1.7.1.js"></script>
+<script src="Scripts/public-api.js"></script>
+<link href="Css/public.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="Scripts/menu.js"></script>
+    <script type="text/javascript">
+
+        // 初始化menu 
+        $(function () {
+
+            function fnInitMenu() {
+                var sArg = { "method": "Selects" };
+                var jsonValue = null;
+                $.ajax({
+                    url: 'ADMIN/Handler/ProgramHandler.ashx',
+                    type: 'GET',
+                    data: sArg,
+                    async: false,
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: "json",      //如果要回傳值，請設成 json
+                    error: function (sError) {
+                    },
+                    success: function (data) {
+                        jsonValue = data;
+                    }
+                });
+                $().menu({
+                    menu_div: 'menu-div',
+                    data: jsonValue
+                });
+            }
+
+            fnInitMenu();
+
+            $(window).scroll(function () {
+                var $this = $(this);
+                if ($this.scrollTop() > $this.height() / 2) {
+                    $("#btn_gotop").slideDown(500)
+                } else {
+                    $("#btn_gotop").slideUp(500);
+                }
+            });
+
+            $('#content-message-div > .close').click(function () {
+                $('#content-message-div').find('p').html("訊息：無訊息。");
+                $(this).parent().slideUp(500);
+            });
+        });
+
+        function fnClearMessage() {
+            $('#content-message-div').removeClass('general');
+            $('#content-message-div').removeClass('error');
+        }
+
+        function fnErrorMessage(msg) {
+            fnClearMessage();
+            $('#content-message-div').addClass('error');
+            $('#content-message-div').find('p').html(msg);
+            $('#content-message-div').slideDown(500);
+            $('html, body').animate({ scrollTop: '0px' }, 800);
+        }
+
+        function fnGeneralMessage(msg) {
+            fnClearMessage();
+            $('#content-message-div').addClass('general');
+            $('#content-message-div').find('p').html(msg);
+            $('#content-message-div').slideDown(500);
+            $('html, body').animate({ scrollTop: '0px' }, 800);
+        }
+
+        function fnMenuAction() {
+            if ($('.left-col-1').hasClass('show-menu')) {
+                $('.left-col-1').removeClass('show-menu');
+                $('.right-col-1').removeClass('show-menu');
+                $('#loading').removeClass('show-menu');
+            } else {
+                $('.left-col-1').addClass('show-menu');
+                $('.right-col-1').addClass('show-menu');
+                $('#loading').addClass('show-menu');
+            }
+        }
+
+        function fnLogout() {
+            var sArg = { "method": "fnLogout" };
+            $.ajax({
+                url: 'ADMIN/Handler/AccountHandler.ashx',
+                type: 'GET',
+                data: sArg,
+                async: true,
+                contentType: 'application/json; charset=UTF-8',
+                success: function (data) {
+                    window.location = "Login.aspx";
+                }
+            });
+        }
+
+        function fnGoTop() {
+            $('html, body').animate({ scrollTop: '0px' }, 800);
+        }
+
+    </script>
+    <title>系統</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="block">
+        <header>
+            <img src="Image/logo.png" class="logo-div" />
+            <input id="open-menu" onclick="fnMenuAction()" type="image" src="image/list-out.png" onmouseover="this.src='image/list-in.png'" onmouseout="this.src='image/list-out.png'" />
+            <div class="header-right-div">
+                <button type="button" class="btn-style1" id="btn_logout" onclick="fnLogout();">
+                    <img src="Image/logout.png" /></button>
+            </div>
+        </header>
+        <div id="block-content">
+            <div class="left-col-1 color-black">
+                <div id="menu-div">
+                </div>
+            </div>
+            <div class="right-col-1 color-gray">
+                <div id='loading'>
+                    正在載入頁面資料...
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer class="footer-style1">
+                    MNDT Ghost @2017
+                    <input type="button" id="btn_gotop" class="btn-style2" value="回頂部" onclick="fnGoTop();" />
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

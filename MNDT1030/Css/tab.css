@@ -1,0 +1,69 @@
+﻿
+.item-tab-content {
+    border: 1px solid #a9a9a9;
+    padding: 10px;
+    width: calc(100% - 22px);
+    float: left;
+}
+
+.tab1-div {
+}
+
+.tab2-div {
+}
+
+.hide {
+    display: none;
+}
+
+.item-tab {
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .item-tab > ul > li {
+        height: 39px;
+        float: left;
+        width: auto;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-align: center;
+        padding: 0;
+        position: relative;
+        width: 100px;
+        border-bottom: ridge 1px;
+        z-index: 2;
+    }
+
+        .item-tab > ul > li:hover {
+            background: #dddddd;
+        }
+
+.select-tab {
+    border-color: #a9a9a9;
+    border-bottom: ridge 0px;
+    border-top: ridge 1px;
+    border-left: ridge 1px;
+    border-right: ridge 1px;
+}
+
+.item-tab > ul > li > a {
+    text-decoration: none;
+    color: #218afe;
+    height: 40px;
+    font-family: 'Yu Gothic UI';
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+
+.item-tab-content > div {
+    font-family: 'Yu Gothic UI';
+    font-size: 13px;
+}
+
+
+.item-tab > ul > li > a:hover {
+    color: #000000;
+}

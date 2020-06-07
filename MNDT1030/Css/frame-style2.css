@@ -1,0 +1,35 @@
+﻿/*------------------------------------------整個外框-----------------------------------*/
+.frame-style2 {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+    /*------------------------------------------外框標題抬頭-----------------------------------*/
+
+    .frame-style2 > .frame-title-div {
+        display: inline-block;
+        border-bottom: solid 1px #bababa;
+        width: 100%;
+    }
+
+        .frame-style2 > .frame-title-div > .right-div {
+            float: right;
+        }
+
+        .frame-style2 > .frame-title-div > .left-div {
+            float: left;
+        }
+
+        .frame-style2 > .frame-title-div .action {
+            padding: 10.5px;
+        }
+
+    /*------------------------------------------內容資料外框-----------------------------------*/
+    .frame-style2 .frame-content-div {
+        background: #ffffff;
+        padding: 10px;
+        float: left;
+        width: calc(100% - 20px);
+        overflow-x: auto;
+    }

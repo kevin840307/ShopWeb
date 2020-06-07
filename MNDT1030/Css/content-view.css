@@ -1,0 +1,140 @@
+﻿#content-view {
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.col-9-left {
+    float: left;
+    height: 100%;
+    width: calc(75% - 5px);
+}
+
+.col-3-right {
+    float: right;
+    height: 100%;
+    width: 25%;
+}
+
+.col-6-left {
+    text-align: left;
+    float: left;
+    height: 100%;
+    width: calc(50% - 5px);
+}
+
+.col-6-right-r {
+    text-align: right;
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.col-10-right {
+    text-align: left;
+    float: right;
+    height: 100%;
+    width: calc(82.33333% - 5px); /*2%空間*/
+}
+
+.col-2-left-r {
+    float: left;
+    text-align: right;
+    height: 100%;
+    width: 16.6666%;
+}
+
+.col-4-left-r {
+    float: left;
+    text-align: right;
+    height: 100%;
+    width: 33.3333%;
+}
+
+.col-8-right {
+    float: right;
+    height: 100%;
+    width: 66.66%;
+}
+
+.col-8-left {
+    float: left;
+    height: 100%;
+    width: 66.66%;
+}
+
+.col-6-left-r {
+    float: left;
+    text-align: right;
+    height: 100%;
+    width: 50%;
+}
+
+.col-6-right {
+    text-align: left;
+    float: right;
+    height: 100%;
+    width: calc(50% - 5px); /*2%空間*/
+}
+
+.col-2-left {
+    float: left;
+    height: 100%;
+    width: 16.6666%;
+}
+
+.col-3-left {
+    float: left;
+    height: 100%;
+    width: 25%;
+}
+
+.col-4-left {
+    float: left;
+    height: 100%;
+    width: 33.3%;
+}
+
+.col-2 {
+    height: 100%;
+    width: 16.6666%;
+}
+
+.col-3 {
+    height: 100%;
+    width: 25%;
+}
+
+.col-4 {
+    height: 100%;
+    width: 20%;
+}
+
+.col-10 {
+    height: 100%;
+    width: 83.3333%;
+}
+
+.col-12 {
+    height: 100%;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 720px) {
+    .col-8-right, .col-4-left-r, .col-8-left, .col-3-left, col-4-left,.col-3, .col-4, .col-9-left, .col-3-right, .col-2-left-r, .col-6-left-r, .col-6-right, .col-10-right, .col-2-left, .col-12-left, col-12, .col-2, .col-10, .col-6-left, .col-6-right-r {
+        margin-bottom: 5px;
+        width: 100%;
+        float: left;
+        text-align: left;
+        max-width: -webkit-fill-available;
+    }
+
+    /*.col-2, .col-10 {
+        max-width: -webkit-fill-available;
+        float: left;
+        text-align: left;
+        height: 100%;
+        width: 100%;
+    }*/
+}

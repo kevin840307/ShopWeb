@@ -1,0 +1,69 @@
+﻿.messagebox-target {
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: -100%;
+    overflow: hidden;
+    max-width: 1024px;
+    transition: 0.5s ease-in-out;
+}
+
+    .messagebox-target:target {
+        top: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+
+.messagebox-close {
+    width: 50px;
+    height: 50px;
+    background: #389bc5;
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+.messagebox-close:hover {
+    background: #287c9f;
+}
+
+    .messagebox-close:after {
+        width: 30px;
+        height: 1px;
+        content: "";
+        display: block;
+        background: #fff;
+        position: absolute;
+        top: 23px;
+        left: 10px;
+        transform: rotate(45deg);
+    }
+
+    .messagebox-close:before {
+        width: 30px;
+        height: 1px;
+        content: "";
+        display: block;
+        background: #fff;
+        position: absolute;
+        top: 23px;
+        left: 10px;
+        transform: rotate(-45deg);
+    }
+
+.messagebox-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    margin: auto;
+    overflow: auto;
+    max-width: 1024px;
+    max-height: 100%;
+}

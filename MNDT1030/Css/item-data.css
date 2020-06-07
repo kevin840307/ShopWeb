@@ -1,0 +1,127 @@
+﻿.item-data-div {
+    padding-top: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.item-data-div-left {
+    width: 60%;
+    margin-bottom: 20px;
+    border-color: #a9a9a9;
+    border-bottom: ridge 1px;
+    border-radius: 3px;
+    margin-right: 20px;
+    float: left;
+}
+
+    .item-data-div-left > div {
+        float: left;
+        width: calc(100% - 22px);
+    }
+
+
+        .item-data-div-left > div > ul {
+            padding: 0;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+
+            .item-data-div-left > div > ul li {
+                cursor: pointer;
+            }
+
+.item-data-big-img:hover {
+    border-color: #2ca0ff;
+}
+
+
+.item-data-div-left > div > ul > li > a {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    padding: 0;
+    display: block;
+}
+
+
+.item-data-div-right {
+    width: 38.35%;
+    border-color: #a9a9a9;
+    border-bottom: ridge 1px;
+    border-radius: 3px;
+    float: left;
+}
+
+.item-data-big-img {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #a9a9a9;
+    border-color: #a9a9a9;
+    border-radius: 5px;
+}
+
+.item-data-big-img > a > div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+}
+
+
+
+.item-data-small-img {
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    border-color: #a9a9a9;
+    text-align: center;
+    float: left;
+    margin-right: 12.1px;
+    margin-left: 12.1px;
+}
+
+    .item-data-small-img > a > img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-data-small-img:hover {
+        border-color: #2ca0ff;
+    }
+
+@media screen and (max-width: 1280px) {
+    .item-data-div-right {
+        width: 38%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .item-data-div-left {
+        width: 59%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+
+    .item-data-div-right {
+        margin-bottom:20px;
+        width: 37.5%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .item-data-div-right {
+        width: 100%;
+    }
+
+    .item-data-div-left {
+        width: 100%;
+    }
+}

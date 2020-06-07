@@ -1,0 +1,251 @@
+﻿.line-style1 {
+    width: 100%;
+    height: 1px;
+    background: #d2d2d2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.line-style2-left {
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.title-h3-style1 {
+    font-family: 'Microsoft JhengHei';
+    color: #494949;
+    line-height: 25px;
+}
+
+    .title-h3-style1 img {
+        float: left;
+    }
+
+.font-red {
+    color: red;
+}
+
+.font-gray {
+    color: gray;
+}
+
+/*---------------------------------------載入--------------------------------------*/
+#loading {
+    font-family: 'Microsoft JhengHei';
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.50);
+    color: #fff;
+    position: absolute;
+    font-size: larger;
+    width: calc(100% - 260px);
+    height: calc(100% - 150px);
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 5%;
+    display: none;
+}
+
+    #loading.show-menu {
+        width: calc(100% - 20px);
+    }
+
+/*---------------------------------message樣式---------------------------*/
+#content-message-div.error {
+    background: #ffabab;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: calc(100% - 20px);
+    word-wrap: break-word;
+    padding: 10px;
+    display: none;
+}
+
+    #content-message-div.error > .close {
+        float: right;
+        cursor: pointer;
+    }
+
+
+    #content-message-div.error > p {
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+        color: #d74343;
+        font-weight: bold;
+    }
+
+#content-message-div.general {
+    background: #afcaf7;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: calc(100% - 20px);
+    word-wrap: break-word;
+    padding: 10px;
+    display: none;
+}
+
+    #content-message-div.general > .close {
+        float: right;
+        cursor: pointer;
+    }
+
+
+    #content-message-div.general > p {
+        font-size: 15px;
+        font-family: "Microsoft JhengHei";
+        color: #426094;
+        font-weight: bold;
+    }
+
+/*-------------------------checkbox-------------------------*/
+
+.checkbox-style1 {
+    height: 20px;
+    width: 20px;
+}
+
+/*-------------------------button---------------------------*/
+.btn-img-style1 {
+    text-align: center;
+    background: #6392e1;
+    border: solid 1px #e9e9e9;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .btn-img-style1:hover {
+        background: #5c86cc;
+    }
+
+    .btn-img-style1:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+.btn-img-style2 {
+    text-align: center;
+    background: #ff4949;
+    border: solid 1px #e9e9e9;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .btn-img-style2:hover {
+        background: #d14646;
+    }
+
+    .btn-img-style2:focus {
+        outline: none;
+        border-color: #f66b6b;
+        box-shadow: 0 0 10px #f66b6b;
+    }
+
+.btn-img-style3 {
+    text-align: center;
+    background: #007979;
+    border: solid 1px #e9e9e9;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .btn-img-style3:hover {
+        background: #005757;
+    }
+
+    .btn-img-style3:focus {
+        outline: none;
+        border-color: #009393;
+        box-shadow: 0 0 10px #009393;
+    }
+
+.btn-img-style4 {
+    text-align: center;
+    background: #4f4f4f;
+    border: solid 1px #e9e9e9;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .btn-img-style4:hover {
+        background: #3c3c3c;
+    }
+
+    .btn-img-style4:focus {
+        outline: none;
+        border-color: #5b5b5b;
+        box-shadow: 0 0 10px #5b5b5b;
+    }
+
+.btn-style1 {
+    text-align: center;
+    background: #6392e1;
+    border: solid 1px #e9e9e9;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 15px;
+    font-family: "Microsoft JhengHei";
+}
+
+    .btn-style1:hover {
+        background: #5c86cc;
+    }
+
+    .btn-style1:focus {
+        outline: none;
+        border-color: #36b2fe;
+        box-shadow: 0 0 10px #36b2fe;
+    }
+
+.btn-style2 {
+    border: solid 1px #e9e9e9;
+    background: rgba(0, 0, 0, 0.52);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-style2:hover {
+        background: rgba(0, 0, 0, 0.62);
+    }
+
+    .btn-style2:focus {
+        outline: none;
+        border-color: rgba(0, 0, 0, 0.62);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.62);
+    }
+
+.spacing-right {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    /*---------------------------------------載入--------------------------------------*/
+    #loading {
+        left: 0px;
+        top: 50px;
+        height: 100%;
+        position: fixed;
+        width: 100%;
+    }
+
+    .spacing-right {
+        margin-right: 0px;
+    }
+}

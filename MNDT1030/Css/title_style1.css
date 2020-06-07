@@ -1,0 +1,46 @@
+﻿
+.title-style1 {
+    float: left;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: calc(100% - 200px);
+}
+
+    .title-style1 .col-4-left {
+        width: calc(33.3% - 20px);
+        padding: 10px;
+        text-align: center;
+        float: left;
+    }
+
+
+
+        .title-style1 .col-4-left .title-content {
+            width: calc(100% - 16px);
+            padding: 8px;
+            border-radius: 5px;
+            font-family: 'Microsoft JhengHei';
+            background: #cbcbcb;
+            color: #fff;
+        }
+
+            .title-style1 .col-4-left .title-content.active {
+                background: #808080;
+            }
+
+@media screen and (max-width: 720px) {
+    .title-style1 {
+        float: left;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 00px;
+        padding-right: 00px;
+        width: calc(100% - 000px);
+    }
+
+        .title-style1 .col-4-left {
+            width: calc(100% - 20px);
+        }
+}
